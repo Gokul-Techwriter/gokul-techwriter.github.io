@@ -41,7 +41,7 @@
     margin-bottom: 2.5rem;
   }
 
-  .card-label {
+.card-label {
     position: absolute;
     inset: 0;
     display: flex;
@@ -52,16 +52,23 @@
     color: white;
     text-align: center;
     padding: 1rem;
-    background: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(2px);
+    background: rgba(0, 0, 0, 0.5);
     border-radius: 0.5rem;
-    transition: all 0.3s ease;
-  }
+}
 
-.card:hover .card-label {
-    background: rgba(0, 0, 0, 0.75);
-    backdrop-filter: blur(4px);
-  }
+.card-label .icon {
+    font-size: 2rem;
+    filter: drop-shadow(0 2px 8px rgba(0,0,0,0.5));
+}
+
+.card-label .text {
+    font-family: 'Cinzel', serif;
+    font-size: 1.1rem;
+    letter-spacing: 0.12em;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.6);
+    font-weight: 600;
+    text-transform: uppercase;
+}
 
   .card-bg {
     position: absolute;
