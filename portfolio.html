@@ -16,56 +16,119 @@
     font-family: 'Raleway', sans-serif;
     background: #f5f0e8;
     min-height: 100vh;
+    display: flex;
   }
 
-  .container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 3rem 2rem;
+  /* LEFT SIDEBAR - Dark Green Background */
+  .sidebar {
+    width: 280px;
+    background: #2c3e2f;
+    color: #e8e0d5;
+    padding: 2rem;
+    min-height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
   }
 
-  h1 {
+  .sidebar h1 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 2.5rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.5rem;
+    color: #f5f0e8;
+  }
+
+  .sidebar .subtitle {
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    color: #b8aa99;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+  }
+
+  .sidebar .tech-stack {
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    color: #9a8a78;
+    margin-top: 0.5rem;
+  }
+
+  .sidebar .divider {
+    width: 40px;
+    height: 2px;
+    background: #6aaba5;
+    margin: 1.5rem 0;
+  }
+
+  .sidebar .back-link {
+    margin-top: auto;
+    font-size: 0.8rem;
+  }
+
+  .sidebar .back-link a {
+    color: #b8aa99;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .sidebar .back-link a:hover {
+    color: #6aaba5;
+  }
+
+  /* RIGHT CONTENT */
+  .main-content {
+    margin-left: 280px;
+    padding: 3rem 4rem;
+    max-width: 900px;
+    width: 100%;
+  }
+
+  .main-content h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
     font-weight: 500;
     color: #2c3e2f;
     margin-bottom: 1rem;
     letter-spacing: -0.02em;
   }
 
-  .description {
+  .main-content .description {
     color: #6b5e4e;
-    font-size: 1rem;
+    font-size: 0.95rem;
     line-height: 1.6;
     margin-bottom: 2.5rem;
     border-left: 3px solid #6aaba5;
     padding-left: 1rem;
   }
 
-  h2 {
+  .main-content h2 {
     font-family: 'Cinzel', serif;
     font-size: 1rem;
     font-weight: 600;
     letter-spacing: 0.08em;
     color: #4a6b5c;
-    margin: 2rem 0 1rem 0;
+    margin: 1.5rem 0 0.75rem 0;
     text-transform: uppercase;
   }
 
-  ul {
+  .main-content ul {
     list-style: none;
     padding: 0;
   }
 
-  li {
+  .main-content li {
     margin-bottom: 0.5rem;
     color: #3a3a3a;
-    font-size: 1rem;
+    font-size: 0.95rem;
     position: relative;
     padding-left: 1.2rem;
   }
 
-  li::before {
+  .main-content li::before {
     content: "•";
     color: #6aaba5;
     font-weight: bold;
@@ -73,37 +136,38 @@
     left: 0;
   }
 
-  .back-link {
-    margin-top: 3rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid #ddd6cc;
-  }
-
-  .back-link a {
-    color: #3a6e69;
-    text-decoration: none;
-    font-size: 0.9rem;
-    transition: color 0.2s;
-  }
-
-  .back-link a:hover {
-    color: #4a8b85;
-    text-decoration: underline;
-  }
-
   @media (max-width: 768px) {
-    .container {
+    .sidebar {
+      position: relative;
+      width: 100%;
+      min-height: auto;
+      padding: 1.5rem;
+    }
+    .main-content {
+      margin-left: 0;
       padding: 2rem 1.5rem;
     }
-    h1 {
-      font-size: 2rem;
+    body {
+      flex-direction: column;
     }
   }
 </style>
 </head>
 <body>
 
-<div class="container">
+<!-- LEFT SIDEBAR - Exactly like your image -->
+<div class="sidebar">
+  <h1>PORTFOLIO</h1>
+  <div class="subtitle">Technical Writing Portfolio</div>
+  <div class="tech-stack">Markdown | Docs-as-Code | GitHub</div>
+  <div class="divider"></div>
+  <div class="back-link">
+    <a href="/">← Back to Home</a>
+  </div>
+</div>
+
+<!-- RIGHT CONTENT -->
+<div class="main-content">
   <h1>Portfolio</h1>
   <div class="description">
     8 documents covering developer and productivity tools — written in Markdown, managed on GitHub.
@@ -132,10 +196,6 @@
     <li>Gmail Web FAQ</li>
     <li>Google Chrome FAQ</li>
   </ul>
-
-  <div class="back-link">
-    <a href="/">← Back to Home</a>
-  </div>
 </div>
 
 </body>
