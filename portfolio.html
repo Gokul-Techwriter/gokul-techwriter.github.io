@@ -19,64 +19,20 @@
     display: flex;
   }
 
-  /* LEFT SIDEBAR - Dark Green Background */
+  /* LEFT SIDEBAR - Using your image */
   .sidebar {
     width: 280px;
-    background: #2c3e2f;
-    color: #e8e0d5;
-    padding: 2rem;
     min-height: 100vh;
     position: fixed;
     left: 0;
     top: 0;
-    display: flex;
-    flex-direction: column;
   }
 
-  .sidebar h1 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.5rem;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    margin-bottom: 0.5rem;
-    color: #f5f0e8;
-  }
-
-  .sidebar .subtitle {
-    font-size: 0.7rem;
-    letter-spacing: 0.15em;
-    color: #b8aa99;
-    margin-bottom: 0.5rem;
-    text-transform: uppercase;
-  }
-
-  .sidebar .tech-stack {
-    font-size: 0.65rem;
-    letter-spacing: 0.1em;
-    color: #9a8a78;
-    margin-top: 0.5rem;
-  }
-
-  .sidebar .divider {
-    width: 40px;
-    height: 2px;
-    background: #6aaba5;
-    margin: 1.5rem 0;
-  }
-
-  .sidebar .back-link {
-    margin-top: auto;
-    font-size: 0.8rem;
-  }
-
-  .sidebar .back-link a {
-    color: #b8aa99;
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-
-  .sidebar .back-link a:hover {
-    color: #6aaba5;
+  .sidebar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
   }
 
   /* RIGHT CONTENT */
@@ -136,12 +92,27 @@
     left: 0;
   }
 
+  .back-link {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #ddd6cc;
+  }
+
+  .back-link a {
+    color: #3a6e69;
+    text-decoration: none;
+    font-size: 0.9rem;
+  }
+
+  .back-link a:hover {
+    text-decoration: underline;
+  }
+
   @media (max-width: 768px) {
     .sidebar {
       position: relative;
       width: 100%;
       min-height: auto;
-      padding: 1.5rem;
     }
     .main-content {
       margin-left: 0;
@@ -155,15 +126,9 @@
 </head>
 <body>
 
-<!-- LEFT SIDEBAR - Exactly like your image -->
+<!-- LEFT SIDEBAR - Your image -->
 <div class="sidebar">
-  <h1>PORTFOLIO</h1>
-  <div class="subtitle">Technical Writing Portfolio</div>
-  <div class="tech-stack">Markdown | Docs-as-Code | GitHub</div>
-  <div class="divider"></div>
-  <div class="back-link">
-    <a href="/">← Back to Home</a>
-  </div>
+  <img src="images/portfolio-left-side-banner.png" alt="Portfolio Sidebar">
 </div>
 
 <!-- RIGHT CONTENT -->
@@ -196,6 +161,10 @@
     <li>Gmail Web FAQ</li>
     <li>Google Chrome FAQ</li>
   </ul>
+
+  <div class="back-link">
+    <a href="/">← Back to Home</a>
+  </div>
 </div>
 
 </body>
