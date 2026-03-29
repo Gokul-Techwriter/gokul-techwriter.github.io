@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Gokul S Anand</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Cinzel:wght@400;600&family=Raleway:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Raleway', sans-serif; background: #ffffff; min-height: 100vh; display: flex; }
+
+  .sidebar {
+    width: 320px; min-width: 320px; min-height: 100vh;
+    background-image: url('images/contact-left-side-banner.png');
+    background-size: contain; background-position: center; background-repeat: no-repeat; background-color: #4a8b85;
+    position: sticky; top: 0; height: 100vh;
+  }
+
+  .content {
+    flex: 1; padding: 4rem 5rem; background: #ffffff;
+    min-height: 100vh; display: flex; flex-direction: column; justify-content: center;
+  }
+
+  .content h1 {
+    font-family: 'Cormorant Garamond', serif; font-size: 3rem;
+    font-weight: 400; color: #1a1a1a; margin-bottom: 2rem; text-align: center;
+  }
+
+  .content p { font-size: 1rem; color: #333; line-height: 1.8; margin-bottom: 2.5rem; text-align: center; }
+
+  .contact-links {
+    display: flex; flex-wrap: wrap; gap: 2rem;
+    justify-content: center; margin-bottom: 2rem;
+  }
+  .contact-links a {
+    color: #1a6db5; text-decoration: underline;
+    font-family: 'Courier New', monospace; font-size: 0.95rem;
+  }
+  .contact-links a:hover { color: #4a8b85; }
+  .contact-links span { font-size: 0.95rem; color: #333; }
+
+  .divider { border: none; border-top: 2px solid #1a1a1a; margin: 1rem auto; width: 60%; }
+
+  .back-link { margin-top: 3rem; text-align: center; }
+  .back-link a { color: #3a6e69; text-decoration: none; font-size: 0.9rem; font-weight: 500; }
+  .back-link a:hover { text-decoration: underline; }
+
+  @media (max-width: 768px) {
+    body { flex-direction: column; }
+    .sidebar { width: 100%; height: 200px; min-width: unset; position: relative; }
+    .content { padding: 2rem 1.5rem; justify-content: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<div class="sidebar"></div>
+
+<div class="content">
+  <h1>Contact</h1>
+  <p>I'm currently open to junior Technical Writer roles — Indian and remote.</p>
+
+  <div class="contact-links">
+    <span>✉️ connectgokultwr@gmail.com</span>
+    <a href="https://linkedin.com/in/gokul-s-anand" target="_blank">🔗 LinkedIn</a>
+    <a href="https://github.com/Gokul-Techwriter/technical-writing-portfolio" target="_blank">💻 GitHub Portfolio</a>
+  </div>
+
+  <hr class="divider">
+  <div class="back-link"><a href="/">← Back to Home</a></div>
+</div>
+
+</body>
+</html>

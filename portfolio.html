@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio — Gokul S Anand</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Cinzel:wght@400;600&family=Raleway:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Raleway', sans-serif; background: #ffffff; min-height: 100vh; display: flex; }
+
+  .sidebar {
+    width: 320px; min-width: 320px; min-height: 100vh;
+    background-image: url('images/portfolio-left-side-banner.png');
+    background-size: contain; background-position: center; background-repeat: no-repeat; background-color: #4a8b85;
+    position: sticky; top: 0; height: 100vh;
+  }
+
+  .content { flex: 1; padding: 4rem 5rem; background: #ffffff; min-height: 100vh; }
+
+  .content h1 {
+    font-family: 'Cormorant Garamond', serif; font-size: 3rem;
+    font-weight: 400; color: #1a1a1a; margin-bottom: 1rem;
+  }
+  .content .description { font-size: 1rem; color: #444; margin-bottom: 3rem; line-height: 1.6; }
+
+  .content h2 { font-family: 'Raleway', sans-serif; font-size: 1.3rem; font-weight: 700; color: #1a1a1a; margin: 2rem 0 1rem 0; }
+
+  .content ul { list-style: none; padding: 0; margin-bottom: 1rem; }
+  .content ul li { margin-bottom: 0.6rem; padding-left: 1.2rem; position: relative; font-size: 1rem; }
+  .content ul li::before { content: "•"; color: #4a8b85; position: absolute; left: 0; font-weight: bold; }
+  .content ul li a {
+    color: #1a6db5; text-decoration: underline;
+    font-family: 'Courier New', monospace; font-size: 0.95rem; letter-spacing: 0.02em;
+  }
+  .content ul li a:hover { color: #4a8b85; }
+
+  .back-link { margin-top: 4rem; padding-top: 1.5rem; border-top: 1px solid #ddd; }
+  .back-link a { color: #3a6e69; text-decoration: none; font-size: 0.9rem; font-weight: 500; }
+  .back-link a:hover { text-decoration: underline; }
+
+  @media (max-width: 768px) {
+    body { flex-direction: column; }
+    .sidebar { width: 100%; height: 200px; min-width: unset; position: relative; }
+    .content { padding: 2rem 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="sidebar"></div>
+
+<div class="content">
+  <h1>Portfolio</h1>
+  <p class="description">8 documents covering developer and productivity tools — written in Markdown, managed on GitHub.</p>
+
+  <h2>User Guides</h2>
+  <ul>
+    <li><a href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/user-guides/postman-user-guide.md" target="_blank">Postman User Guide</a></li>
+    <li><a href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/user-guides/visual-studio-coding-user-guide.md" target="_blank">Visual Studio Code User Guide</a></li>
+  </ul>
+
+  <h2>Installation Guides</h2>
+  <ul>
+    <li><a href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/installation-guides/postman-installation-guide.md" target="_blank">Postman Installation Guide</a></li>
+    <li><a href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/installation-guides/vs-code-installation-guides.md" target="_blank">VS Code Installation Guide</a></li>
+  </ul>
+
+  <h2>Troubleshooting Guides</h2>
+  <ul>
+    <li><a href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/troubleshooting-guides/whatsapp-desktop-troubleshooting-guide.md" target="_blank">WhatsApp Desktop Troubleshooting Guide</a></li>
+    <li><a href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/troubleshooting-guides/zoom-desktop-troubleshooting-guide.md" target="_blank">Zoom Desktop Troubleshooting Guide</a></li>
+  </ul>
+
+  <h2>FAQ</h2>
+  <ul>
+    <li><a href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/faqs/gmail-web-faq.md" target="_blank">Gmail Web FAQ</a></li>
+    <li><a href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/faqs/google-chrome-faq.md" target="_blank">Google Chrome FAQ</a></li>
+  </ul>
+
+  <div class="back-link"><a href="/">← Back to Home</a></div>
+</div>
+
+</body>
+</html>
