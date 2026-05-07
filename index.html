@@ -4,107 +4,653 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Gokul S Anand — Technical Writer</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Cinzel:wght@400;600&family=Raleway:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Raleway', sans-serif; background: #ffffff; min-height: 100vh; }
 
-  .banner-wrap { width: 100%; overflow: hidden; border-radius: 0 0 2rem 2rem; line-height: 0; }
-  .banner { width: 100%; height: auto; display: block; }
-
-  main { padding: 3rem 4rem 2.5rem; max-width: 1100px; margin: 0 auto; }
-
-  .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-bottom: 2.5rem; }
-
-  .card {
-    position: relative; border-radius: 0.5rem; overflow: hidden;
-    aspect-ratio: 3/4; border: 3px solid #6aaba5; cursor: pointer;
-    text-decoration: none; display: block;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  .card:hover { transform: translateY(-8px); box-shadow: 0 24px 48px rgba(74,139,133,0.3); }
-
-  .card-bg {
-    position: absolute; inset: 0; background-size: cover; background-position: center;
-    transition: transform 0.4s ease;
-  }
-  .card:hover .card-bg { transform: scale(1.06); }
-
-  .card-overlay {
-    position: absolute; inset: 0; background: rgba(30,60,55,0.38);
-    transition: background 0.3s ease;
-  }
-  .card:hover .card-overlay { background: rgba(30,60,55,0.52); }
-
-  .card-label {
-    position: absolute; inset: 0; display: flex; flex-direction: column;
-    align-items: center; justify-content: center; gap: 0.5rem;
-    color: white; text-align: center; padding: 1rem;
-  }
-  .card-label .icon { font-size: 1.6rem; filter: drop-shadow(0 2px 6px rgba(0,0,0,0.5)); }
-  .card-label .text {
-    font-family: 'Cinzel', serif; font-size: 1rem; letter-spacing: 0.12em;
-    text-shadow: 0 2px 10px rgba(0,0,0,0.6); font-weight: 600;
+  :root {
+    --teal: #2d7d74;
+    --teal-dark: #1f5c55;
+    --teal-light: #e8f4f2;
+    --navy: #0d2b45;
+    --text: #1a1a2e;
+    --text-light: #555;
+    --white: #ffffff;
+    --border: #e0e0e0;
   }
 
-  .social { text-align: center; padding-top: 1.2rem; border-top: 1px solid rgba(74,139,133,0.25); }
-  .social a {
-    font-family: 'Cinzel', serif; font-size: 0.85rem; letter-spacing: 0.18em;
-    color: #3a6e69; text-decoration: none; text-transform: uppercase;
-    padding: 0 1.2rem; transition: color 0.2s; font-weight: 700;
+  body {
+    font-family: 'Raleway', sans-serif;
+    background: var(--white);
+    color: var(--text);
+    min-height: 100vh;
   }
-  .social a:hover { color: #4a8b85; }
-  .social .sep { color: #6aaba5; font-size: 1.1rem; }
 
-  @media (max-width: 768px) {
-    main { padding: 2rem 1rem 1.5rem; }
-    .cards { grid-template-columns: 1fr; gap: 1rem; }
-    .card { aspect-ratio: 4/3; }
+  /* NAV */
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.4rem 3.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-brand h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: var(--navy);
+    letter-spacing: 0.01em;
+  }
+
+  .nav-brand p {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    color: var(--teal);
+    text-transform: uppercase;
+    margin-top: 0.1rem;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text-light);
+    transition: color 0.2s;
+    position: relative;
+    padding-bottom: 4px;
+  }
+
+  .nav-links a.active,
+  .nav-links a:hover {
+    color: var(--teal);
+  }
+
+  .nav-links a.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 100%; height: 2px;
+    background: var(--teal);
+    border-radius: 2px;
+  }
+
+  /* HERO */
+  .hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4rem 3.5rem 3rem;
+    min-height: calc(100vh - 200px);
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .hero-left {
+    flex: 1;
+    max-width: 560px;
+  }
+
+  .hero-left h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    font-weight: 600;
+    color: var(--navy);
+    line-height: 1.25;
+    margin-bottom: 2rem;
+  }
+
+  .hero-left h2 span {
+    color: var(--teal);
+  }
+
+  .hero-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background: var(--teal);
+    color: var(--white);
+    padding: 0.85rem 2rem;
+    border: none;
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.2s, transform 0.1s;
+    letter-spacing: 0.03em;
+  }
+
+  .btn-primary:hover {
+    background: var(--teal-dark);
+    transform: translateY(-1px);
+  }
+
+  .hero-right {
+    flex-shrink: 0;
+    margin-left: 3rem;
+  }
+
+  .hero-photo {
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    background: var(--teal);
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+  }
+
+  .hero-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+  }
+
+  /* WHAT I DO */
+  .section-divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 0 3.5rem;
+  }
+
+  .what-i-do {
+    padding: 3rem 3.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .what-i-do h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 0.4rem;
+  }
+
+  .section-underline {
+    width: 30px;
+    height: 3px;
+    background: var(--teal);
+    border-radius: 2px;
+    margin-bottom: 2rem;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0;
+    border: 1px solid var(--border);
+  }
+
+  .service-item {
+    padding: 1.8rem 1.2rem;
+    text-align: center;
+    border-right: 1px solid var(--border);
+    transition: background 0.2s;
+  }
+
+  .service-item:last-child {
+    border-right: none;
+  }
+
+  .service-item:hover {
+    background: var(--teal-light);
+  }
+
+  .service-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--teal-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+  }
+
+  .service-icon svg {
+    width: 22px;
+    height: 22px;
+    stroke: var(--teal);
+    fill: none;
+    stroke-width: 1.8;
+  }
+
+  .service-num {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--teal);
+    margin-bottom: 0.35rem;
+  }
+
+  .service-title {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 0.2rem;
+  }
+
+  .service-sub {
+    font-size: 0.78rem;
+    color: var(--text-light);
+  }
+
+  /* TOOLS */
+  .tools-section {
+    padding: 2rem 3.5rem 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .tools-section h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 1.2rem;
+  }
+
+  .tools-grid {
+    display: flex;
+    gap: 0;
+    border: 1px solid var(--border);
+    flex-wrap: wrap;
+  }
+
+  .tool-item {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.9rem 1.8rem;
+    border-right: 1px solid var(--border);
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--text);
+  }
+
+  .tool-item:last-child {
+    border-right: none;
+  }
+
+  .tool-icon {
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .tool-icon svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  /* FOOTER */
+  footer {
+    text-align: center;
+    padding: 1.5rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.82rem;
+    color: var(--text-light);
+  }
+
+  /* CONTACT MODAL */
+  .modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    z-index: 100;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .modal-overlay.open {
+    display: flex;
+  }
+
+  .modal {
+    background: var(--white);
+    border-radius: 16px;
+    border: 2px solid var(--teal);
+    padding: 2.5rem 2rem;
+    width: 90%;
+    max-width: 480px;
+    position: relative;
+    text-align: center;
+    animation: modalIn 0.25s ease;
+  }
+
+  @keyframes modalIn {
+    from { transform: scale(0.92); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
+
+  .modal-close {
+    position: absolute;
+    top: 1rem; right: 1rem;
+    background: none;
+    border: 1.5px solid var(--border);
+    border-radius: 50%;
+    width: 32px; height: 32px;
+    cursor: pointer;
+    font-size: 1rem;
+    color: var(--text-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: border-color 0.2s;
+  }
+
+  .modal-close:hover { border-color: var(--teal); color: var(--teal); }
+
+  .modal-icon-wrap {
+    width: 56px; height: 56px;
+    border-radius: 50%;
+    background: var(--teal-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.2rem;
+  }
+
+  .modal-icon-wrap svg {
+    width: 26px; height: 26px;
+    stroke: var(--teal);
+    fill: none;
+    stroke-width: 1.8;
+  }
+
+  .modal h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 0.4rem;
+  }
+
+  .modal-divider {
+    width: 40px; height: 3px;
+    background: var(--teal);
+    border-radius: 2px;
+    margin: 0 auto 1rem;
+  }
+
+  .modal p {
+    font-size: 0.92rem;
+    color: var(--text-light);
+    margin-bottom: 1.8rem;
+    line-height: 1.5;
+  }
+
+  .contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .contact-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.9rem 1.2rem;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    text-decoration: none;
+    color: var(--text);
+    transition: border-color 0.2s, background 0.2s;
+  }
+
+  .contact-link:hover {
+    border-color: var(--teal);
+    background: var(--teal-light);
+  }
+
+  .contact-link-icon {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .contact-link-icon svg {
+    width: 20px; height: 20px;
+    fill: var(--white);
+    stroke: none;
+  }
+
+  .contact-link-icon.email { background: var(--teal); }
+  .contact-link-icon.linkedin { background: #0077b5; }
+  .contact-link-icon.github { background: #1a1a2e; }
+
+  .contact-link-text {
+    flex: 1;
+    text-align: left;
+  }
+
+  .contact-link-text strong {
+    display: block;
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 0.15rem;
+  }
+
+  .contact-link-text span {
+    font-size: 0.8rem;
+    color: var(--teal);
+  }
+
+  .contact-link-arrow {
+    color: var(--text-light);
+    font-size: 1rem;
+  }
+
+  @media (max-width: 900px) {
+    nav { padding: 1.2rem 1.5rem; }
+    .hero { flex-direction: column-reverse; padding: 2.5rem 1.5rem; text-align: center; gap: 2rem; }
+    .hero-right { margin-left: 0; }
+    .hero-photo { width: 220px; height: 220px; }
+    .hero-left h2 { font-size: 2.2rem; }
+    .hero-buttons { justify-content: center; }
+    .services-grid { grid-template-columns: repeat(3, 1fr); }
+    .service-item { border-bottom: 1px solid var(--border); }
+    .section-divider, .what-i-do, .tools-section { padding-left: 1.5rem; padding-right: 1.5rem; }
+    .tools-grid { flex-direction: column; }
+    .tool-item { border-right: none; border-bottom: 1px solid var(--border); }
   }
 </style>
 </head>
 <body>
 
-<div class="banner-wrap">
-  <img class="banner" src="images/top-banner.png" alt="Gokul S Anand — Technical Writer">
-</div>
+<nav>
+  <div class="nav-brand">
+    <h1>Gokul S Anand</h1>
+    <p>Technical Writer</p>
+  </div>
+  <ul class="nav-links">
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="portfolio.html">Work</a></li>
+    <li><a href="about.html">About</a></li>
+  </ul>
+</nav>
 
 <main>
-  <div class="cards">
-    <a class="card" href="portfolio.html">
-      <div class="card-bg" style="background-image: url('images/portfolio-project.png')"></div>
-      <div class="card-overlay"></div>
-      <div class="card-label">
-        <span class="icon">📂</span>
-        <span class="text">View Portfolio</span>
+  <section class="hero">
+    <div class="hero-left">
+      <h2>I create clear, concise, and user-focused documentation for <span>users and developers.</span></h2>
+      <div class="hero-buttons">
+        <a href="portfolio.html" class="btn-primary">View My Work</a>
+        <button class="btn-primary" onclick="document.getElementById('contactModal').classList.add('open')">Contact Me</button>
       </div>
-    </a>
-
-    <a class="card" href="about.html">
-      <div class="card-bg" style="background-image: url('images/about-me.png')"></div>
-      <div class="card-overlay"></div>
-      <div class="card-label">
-        <span class="icon">👤</span>
-        <span class="text">About Me</span>
+    </div>
+    <div class="hero-right">
+      <div class="hero-photo">
+        <img src="images/profile.jpg" alt="Gokul S Anand" onerror="this.style.display='none'">
       </div>
-    </a>
+    </div>
+  </section>
 
-    <a class="card" href="contact.html">
-      <div class="card-bg" style="background-image: url('images/contact.png')"></div>
-      <div class="card-overlay"></div>
-      <div class="card-label">
-        <span class="icon">✉️</span>
-        <span class="text">Contact</span>
+  <hr class="section-divider">
+
+  <section class="what-i-do">
+    <h3>What I Do</h3>
+    <div class="section-underline"></div>
+    <div class="services-grid">
+      <div class="service-item">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+        </div>
+        <div class="service-num">01</div>
+        <div class="service-title">User Guides</div>
+        <div class="service-sub">Product guides.</div>
       </div>
-    </a>
-  </div>
+      <div class="service-item">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2v6"/><path d="M8.5 9.5 5 7"/><path d="m15.5 9.5 3.5-2.5"/><circle cx="12" cy="14" r="4"/><path d="M12 18v4"/></svg>
+        </div>
+        <div class="service-num">02</div>
+        <div class="service-title">Installation</div>
+        <div class="service-sub">Setup docs.</div>
+      </div>
+      <div class="service-item">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 0-14.14 0"/><path d="M21.66 8.35a15 15 0 0 0-19.32 0"/><path d="M16.24 7.76a6 6 0 0 0-8.48 0"/></svg>
+        </div>
+        <div class="service-num">03</div>
+        <div class="service-title">Troubleshooting</div>
+        <div class="service-sub">Issue resolution.</div>
+      </div>
+      <div class="service-item">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        </div>
+        <div class="service-num">04</div>
+        <div class="service-title">API Documentation</div>
+        <div class="service-sub">API references.</div>
+      </div>
+      <div class="service-item">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        </div>
+        <div class="service-num">05</div>
+        <div class="service-title">FAQ Documentation</div>
+        <div class="service-sub">Help center content.</div>
+      </div>
+    </div>
+  </section>
 
-  <div class="social">
-    <a href="https://linkedin.com/in/gokul-s-anand" target="_blank">LinkedIn</a>
-    <span class="sep">•</span>
-    <a href="https://github.com/Gokul-Techwriter/technical-writing-portfolio" target="_blank">GitHub</a>
-  </div>
+  <section class="tools-section">
+    <h3>Tools &amp; Technologies</h3>
+    <div class="tools-grid">
+      <!-- Markdown -->
+      <div class="tool-item">
+        <div class="tool-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#2d7d74" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M6 15V9l3 3 3-3v6"/><path d="M17 12h-2m2 0-2-3m2 3-2 3"/></svg>
+        </div>
+        Markdown
+      </div>
+      <!-- Git -->
+      <div class="tool-item">
+        <div class="tool-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#f05033" stroke-width="1.8"><circle cx="6" cy="6" r="2"/><circle cx="18" cy="6" r="2"/><circle cx="12" cy="18" r="2"/><path d="M6 8v4a2 2 0 0 0 2 2h4"/><path d="M18 8v4a2 2 0 0 1-2 2h-4"/></svg>
+        </div>
+        Git
+      </div>
+      <!-- GitHub -->
+      <div class="tool-item">
+        <div class="tool-icon">
+          <svg viewBox="0 0 24 24" fill="#1a1a2e"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+        </div>
+        GitHub
+      </div>
+      <!-- JSON -->
+      <div class="tool-item">
+        <div class="tool-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#2d7d74" stroke-width="1.8"><path d="M8 3H7a2 2 0 0 0-2 2v5a2 2 0 0 1-2 2 2 2 0 0 1 2 2v5c0 1.1.9 2 2 2h1"/><path d="M16 21h1a2 2 0 0 0 2-2v-5a2 2 0 0 1 2-2 2 2 0 0 1-2-2V5a2 2 0 0 0-2-2h-1"/></svg>
+        </div>
+        JSON
+      </div>
+      <!-- REST API -->
+      <div class="tool-item">
+        <div class="tool-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#2d7d74" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 12h8"/><path d="m12 8 4 4-4 4"/></svg>
+        </div>
+        REST API
+      </div>
+      <!-- Postman -->
+      <div class="tool-item">
+        <div class="tool-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#ef5b25" stroke-width="1.8"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4 20-7z"/></svg>
+        </div>
+        Postman
+      </div>
+    </div>
+  </section>
 </main>
+
+<footer>
+  &copy; 2026 Gokul S Anand. All rights reserved.
+</footer>
+
+<!-- Contact Modal -->
+<div class="modal-overlay" id="contactModal" onclick="if(event.target===this)this.classList.remove('open')">
+  <div class="modal">
+    <button class="modal-close" onclick="document.getElementById('contactModal').classList.remove('open')">&#x2715;</button>
+    <div class="modal-icon-wrap">
+      <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+    </div>
+    <h2>Get In Touch</h2>
+    <div class="modal-divider"></div>
+    <p>Feel free to reach out through any of the platforms below.</p>
+    <div class="contact-links">
+      <a href="mailto:connectgokultwr@gmail.com" class="contact-link">
+        <div class="contact-link-icon email">
+          <svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"/><polyline points="22,6 12,13 2,6" fill="white"/></svg>
+        </div>
+        <div class="contact-link-text">
+          <strong>Email Me</strong>
+          <span>connectgokultwr@gmail.com</span>
+        </div>
+        <span class="contact-link-arrow">&#8250;</span>
+      </a>
+      <a href="https://linkedin.com/in/gokul-s-anand" target="_blank" class="contact-link">
+        <div class="contact-link-icon linkedin">
+          <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </div>
+        <div class="contact-link-text">
+          <strong>LinkedIn</strong>
+          <span>linkedin.com/in/gokul-s-anand</span>
+        </div>
+        <span class="contact-link-arrow">&#8250;</span>
+      </a>
+      <a href="https://github.com/gokulsanand" target="_blank" class="contact-link">
+        <div class="contact-link-icon github">
+          <svg viewBox="0 0 24 24" fill="white"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+        </div>
+        <div class="contact-link-text">
+          <strong>GitHub</strong>
+          <span>github.com/gokulsanand</span>
+        </div>
+        <span class="contact-link-arrow">&#8250;</span>
+      </a>
+    </div>
+  </div>
+</div>
 
 </body>
 </html>
