@@ -3,88 +3,408 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portfolio — Gokul S Anand</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Cinzel:wght@400;600&family=Raleway:wght@300;400;500&display=swap" rel="stylesheet">
+<title>Work — Gokul S Anand</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Raleway', sans-serif; background: #ffffff; min-height: 100vh; display: flex; }
 
-  .sidebar {
-    width: 320px; min-width: 320px; min-height: 100vh;
-    background-image: url('images/portfolio-left-side-banner.png');
-    background-size: contain; background-position: center; background-repeat: no-repeat; background-color: #4a8b85;
-    position: sticky; top: 0; height: 100vh;
+  :root {
+    --teal: #2d7d74;
+    --teal-dark: #1f5c55;
+    --teal-light: #e8f4f2;
+    --navy: #0d2b45;
+    --white: #ffffff;
+    --border: #e0e0e0;
+    --text: #1a1a2e;
+    --text-light: #666;
   }
 
-  .content { flex: 1; padding: 4rem 5rem; background: #ffffff; min-height: 100vh; }
+  body {
+    font-family: 'Raleway', sans-serif;
+    background: var(--white);
+    color: var(--text);
+    min-height: 100vh;
+    display: flex;
+  }
+
+  /* SIDEBAR */
+  .sidebar {
+    width: 280px;
+    min-width: 280px;
+    min-height: 100vh;
+    background: var(--teal-dark);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem 2rem;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .sidebar-logo {
+    margin-bottom: 2.5rem;
+    text-align: center;
+  }
+
+  /* Feather quill illustration */
+  .quill-wrap {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .quill-wrap svg {
+    width: 70px;
+    height: 70px;
+  }
+
+  .sidebar h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--white);
+    text-align: center;
+    line-height: 1.2;
+    margin-bottom: 0.3rem;
+  }
+
+  .sidebar .role {
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    color: rgba(255,255,255,0.6);
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .sidebar-divider {
+    width: 60px;
+    height: 1px;
+    background: rgba(255,255,255,0.2);
+    margin: 0 auto 1.5rem;
+  }
+
+  .sidebar-tagline {
+    font-size: 0.88rem;
+    color: rgba(255,255,255,0.7);
+    text-align: center;
+    line-height: 1.5;
+  }
+
+  .sidebar-footer {
+    margin-top: auto;
+    text-align: center;
+  }
+
+  .sidebar-footer p {
+    font-size: 0.72rem;
+    color: rgba(255,255,255,0.4);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    justify-content: center;
+  }
+
+  .checkmark {
+    width: 16px; height: 16px;
+    background: var(--teal);
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .checkmark svg {
+    width: 10px; height: 10px;
+    stroke: white;
+    fill: none;
+    stroke-width: 2.5;
+  }
+
+  /* MAIN CONTENT */
+  .content {
+    flex: 1;
+    padding: 3.5rem 4rem;
+    overflow-y: auto;
+  }
+
+  .page-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    color: var(--teal);
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+
+  .page-label-underline {
+    width: 30px;
+    height: 2px;
+    background: var(--teal);
+    margin-bottom: 1.2rem;
+  }
 
   .content h1 {
-    font-family: 'Cormorant Garamond', serif; font-size: 3rem;
-    font-weight: 400; color: #1a1a1a; margin-bottom: 1rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.2rem;
+    font-weight: 400;
+    color: var(--navy);
+    margin-bottom: 0.8rem;
   }
-  .content .description { font-size: 1rem; color: #444; margin-bottom: 3rem; line-height: 1.6; }
 
-  .content h2 { font-family: 'Raleway', sans-serif; font-size: 1.3rem; font-weight: 700; color: #1a1a1a; margin: 2rem 0 1rem 0; }
-
-  .content ul { list-style: none; padding: 0; margin-bottom: 1rem; }
-  .content ul li { margin-bottom: 0.6rem; padding-left: 1.2rem; position: relative; font-size: 1rem; }
-  .content ul li::before { content: "•"; color: #4a8b85; position: absolute; left: 0; font-weight: bold; }
-  .content ul li a {
-    color: #1a6db5; text-decoration: underline;
-    font-family: 'Courier New', monospace; font-size: 0.95rem; letter-spacing: 0.02em;
+  .content .intro {
+    font-size: 0.95rem;
+    color: var(--text-light);
+    margin-bottom: 3rem;
+    line-height: 1.6;
+    max-width: 600px;
   }
-  .content ul li a:hover { color: #4a8b85; }
 
-  .back-link { margin-top: 4rem; padding-top: 1.5rem; border-top: 1px solid #ddd; }
-  .back-link a { color: #3a6e69; text-decoration: none; font-size: 0.9rem; font-weight: 500; }
-  .back-link a:hover { text-decoration: underline; }
+  /* CATEGORY */
+  .category {
+    margin-bottom: 2.5rem;
+  }
 
-  @media (max-width: 768px) {
+  .category-header {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    margin-bottom: 1.2rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .cat-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--teal-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .cat-icon svg {
+    width: 20px;
+    height: 20px;
+    stroke: var(--teal);
+    fill: none;
+    stroke-width: 1.8;
+  }
+
+  .cat-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--navy);
+  }
+
+  .doc-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.6rem 2rem;
+    padding-left: 0;
+    list-style: none;
+  }
+
+  .doc-item {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.9rem;
+  }
+
+  .doc-item a {
+    color: var(--teal-dark);
+    text-decoration: underline;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+
+  .doc-item a:hover { color: var(--teal); }
+
+  .badge {
+    display: inline-block;
+    padding: 0.15rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    flex-shrink: 0;
+  }
+
+  .badge-md {
+    background: #e8f0fe;
+    color: #1a6db5;
+    border: 1px solid #b8d0f7;
+  }
+
+  .badge-pdf {
+    background: #fdecea;
+    color: #c0392b;
+    border: 1px solid #f5b7b1;
+  }
+
+  @media (max-width: 900px) {
     body { flex-direction: column; }
-    .sidebar { width: 100%; height: 200px; min-width: unset; position: relative; }
+    .sidebar { width: 100%; height: auto; min-height: unset; position: relative; padding: 2rem 1.5rem; flex-direction: row; flex-wrap: wrap; justify-content: center; gap: 1rem; }
     .content { padding: 2rem 1.5rem; }
+    .doc-list { grid-template-columns: 1fr; }
   }
 </style>
 </head>
 <body>
 
-<div class="sidebar"></div>
+<aside class="sidebar">
+  <div class="sidebar-logo">
+    <div class="quill-wrap">
+      <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Inkwell -->
+        <ellipse cx="36" cy="65" rx="18" ry="8" fill="rgba(0,0,0,0.4)"/>
+        <path d="M22 55 Q20 48 24 42 Q28 36 36 35 Q44 36 48 42 Q52 48 50 55 Q48 62 36 64 Q24 62 22 55Z" fill="#1a1010" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+        <!-- Quill feather -->
+        <path d="M36 38 Q55 10 68 8 Q60 20 50 30 Q44 36 38 38Z" fill="rgba(255,255,255,0.85)"/>
+        <path d="M36 38 Q48 18 62 12 Q56 24 46 33 Q42 36 38 38Z" fill="rgba(255,255,255,0.5)"/>
+        <path d="M36 38 L40 52" stroke="rgba(255,255,255,0.6)" stroke-width="1.5" stroke-linecap="round"/>
+        <!-- Quill tip -->
+        <path d="M38 50 Q36 54 37 58" stroke="rgba(255,255,255,0.8)" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <h2>Gokul S Anand</h2>
+    <p class="role">Technical Writer</p>
+    <div class="sidebar-divider"></div>
+    <p class="sidebar-tagline">Clear documentation for users and developers.</p>
+  </div>
+
+  <div class="sidebar-footer">
+    <p>&copy; 2026 GOKUL S ANAND <span class="checkmark"><svg viewBox="0 0 10 10"><polyline points="2,5 4,7 8,3"/></svg></span></p>
+  </div>
+</aside>
 
 <div class="content">
+  <div class="page-label">WORK</div>
+  <div class="page-label-underline"></div>
   <h1>Portfolio</h1>
-  <p class="description">10 documents covering developer and productivity tools — written in Markdown, managed on GitHub.</p>
+  <p class="intro">13 documents covering developer and productivity tools — written in Markdown, managed on GitHub.</p>
 
-  <h2>API Documentation</h2>
-  <ul>
-    <li><a href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/api-documentation/notion-api-documentation.md" target="_blank">Notion API Documentation (Markdown)</a></li>
-    <li><a href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/api-documentation/notion-api-documentation.pdf" target="_blank">Notion API Documentation (PDF)</a></li>
-  </ul>
+  <!-- API Documentation -->
+  <div class="category">
+    <div class="category-header">
+      <div class="cat-icon">
+        <svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+      </div>
+      <span class="cat-title">API Documentation</span>
+    </div>
+    <ul class="doc-list">
+      <li class="doc-item">
+        <a href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/api-documentation/notion-api-documentation.md" target="_blank">Notion API Documentation</a>
+        <span class="badge badge-md">MD</span>
+        <span class="badge badge-pdf">PDF</span>
+      </li>
+      <li class="doc-item">
+        <a href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/api-documentation/postman-api-documentation.md" target="_blank">Postman API Documentation</a>
+        <span class="badge badge-md">MD</span>
+        <span class="badge badge-pdf">PDF</span>
+      </li>
+    </ul>
+  </div>
 
-  <h2>User Guides</h2>
-  <ul>
-    <li><a href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/user-guides/postman-user-guide.md" target="_blank">Postman User Guide</a></li>
-    <li><a href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/user-guides/visual-studio-coding-user-guide.md" target="_blank">Visual Studio Code User Guide</a></li>
-  </ul>
+  <!-- User Guides -->
+  <div class="category">
+    <div class="category-header">
+      <div class="cat-icon">
+        <svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+      </div>
+      <span class="cat-title">User Guides</span>
+    </div>
+    <ul class="doc-list">
+      <li class="doc-item">
+        <a href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/user-guides/postman-user-guide.md" target="_blank">Postman User Guide</a>
+        <span class="badge badge-md">MD</span>
+        <span class="badge badge-pdf">PDF</span>
+      </li>
+      <li class="doc-item">
+        <a href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/user-guides/visual-studio-coding-user-guide.md" target="_blank">Visual Studio Code User Guide</a>
+        <span class="badge badge-md">MD</span>
+        <span class="badge badge-pdf">PDF</span>
+      </li>
+    </ul>
+  </div>
 
-  <h2>Installation Guides</h2>
-  <ul>
-    <li><a href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/installation-guides/postman-installation-guide.md" target="_blank">Postman Installation Guide</a></li>
-    <li><a href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/installation-guides/vs-code-installation-guides.md" target="_blank">VS Code Installation Guide</a></li>
-  </ul>
+  <!-- Installation Guides -->
+  <div class="category">
+    <div class="category-header">
+      <div class="cat-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2v12"/><path d="m8 14 4 4 4-4"/><rect x="2" y="18" width="20" height="4" rx="1"/></svg>
+      </div>
+      <span class="cat-title">Installation Guides</span>
+    </div>
+    <ul class="doc-list">
+      <li class="doc-item">
+        <a href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/installation-guides/postman-installation-guide.md" target="_blank">Postman Installation Guide</a>
+        <span class="badge badge-md">MD</span>
+        <span class="badge badge-pdf">PDF</span>
+      </li>
+      <li class="doc-item">
+        <a href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/installation-guides/vs-code-installation-guides.md" target="_blank">VS Code Installation Guide</a>
+        <span class="badge badge-md">MD</span>
+        <span class="badge badge-pdf">PDF</span>
+      </li>
+    </ul>
+  </div>
 
-  <h2>Troubleshooting Guides</h2>
-  <ul>
-    <li><a href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/troubleshooting-guides/whatsapp-desktop-troubleshooting-guide.md" target="_blank">WhatsApp Desktop Troubleshooting Guide</a></li>
-    <li><a href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/troubleshooting-guides/zoom-desktop-troubleshooting-guide.md" target="_blank">Zoom Desktop Troubleshooting Guide</a></li>
-  </ul>
+  <!-- Troubleshooting Guides -->
+  <div class="category">
+    <div class="category-header">
+      <div class="cat-icon">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 0-14.14 0M21.66 8.35a15 15 0 0 0-19.32 0M16.24 7.76a6 6 0 0 0-8.48 0"/></svg>
+      </div>
+      <span class="cat-title">Troubleshooting Guides</span>
+    </div>
+    <ul class="doc-list">
+      <li class="doc-item">
+        <a href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/troubleshooting-guides/whatsapp-desktop-troubleshooting-guide.md" target="_blank">WhatsApp Desktop Troubleshooting Guide</a>
+        <span class="badge badge-md">MD</span>
+        <span class="badge badge-pdf">PDF</span>
+      </li>
+      <li class="doc-item">
+        <a href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/troubleshooting-guides/zoom-desktop-troubleshooting-guide.md" target="_blank">Zoom Desktop Troubleshooting Guide</a>
+        <span class="badge badge-md">MD</span>
+        <span class="badge badge-pdf">PDF</span>
+      </li>
+    </ul>
+  </div>
 
-  <h2>FAQ</h2>
-  <ul>
-    <li><a href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/faqs/gmail-web-faq.md" target="_blank">Gmail Web FAQ</a></li>
-    <li><a href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/faqs/google-chrome-faq.md" target="_blank">Google Chrome FAQ</a></li>
-  </ul>
+  <!-- FAQ Documentation -->
+  <div class="category">
+    <div class="category-header">
+      <div class="cat-icon">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      </div>
+      <span class="cat-title">FAQ Documentation</span>
+    </div>
+    <ul class="doc-list">
+      <li class="doc-item">
+        <a href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/faqs/gmail-web-faq.md" target="_blank">Gmail FAQ</a>
+        <span class="badge badge-md">MD</span>
+        <span class="badge badge-pdf">PDF</span>
+      </li>
+      <li class="doc-item">
+        <a href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/faqs/google-chrome-faq.md" target="_blank">Google Chrome FAQ</a>
+        <span class="badge badge-md">MD</span>
+        <span class="badge badge-pdf">PDF</span>
+      </li>
+    </ul>
+  </div>
 
-  <div class="back-link"><a href="/">← Back to Home</a></div>
 </div>
 
 </body>
