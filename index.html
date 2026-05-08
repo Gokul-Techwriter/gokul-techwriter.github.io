@@ -91,6 +91,7 @@
     padding: 0 4rem;
     border-bottom: 1px solid var(--border);
     min-height: 0;
+    overflow: visible;
   }
 
   .hero-left { max-width: 500px; }
@@ -125,15 +126,24 @@
 
   .btn:hover { background: var(--teal-dark); }
 
-  .hero-right { flex-shrink: 0; }
+  .hero-right {
+    flex-shrink: 0;
+    position: relative;
+    align-self: stretch;
+    display: flex;
+    align-items: flex-end;
+    width: clamp(320px, 33vw, 440px);
+  }
 
   .photo-circle {
-    width: clamp(280px, 28vw, 380px);
-    height: clamp(280px, 28vw, 380px);
+    width: clamp(320px, 33vw, 440px);
+    height: clamp(320px, 33vw, 440px);
     border-radius: 50%;
-    background: var(--teal);
+    background: #2d8a80;
     overflow: hidden;
-    position: relative;
+    position: absolute;
+    bottom: -30px;
+    right: 0;
   }
 
   .photo-circle img {
