@@ -3,219 +3,192 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About — Gokul S Anand</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<title>About | Gokul S Anand</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
 <style>
-  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-  :root {
-    --teal: #2d7d74;
-    --teal-dark: #1f5c55;
-    --teal-light: #e8f4f2;
-    --navy: #0d2b45;
-    --white: #ffffff;
-    --border: #e0e0e0;
-    --text: #1a1a2e;
-    --text-light: #555;
-  }
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
 
-  body {
-    font-family: 'Raleway', sans-serif;
-    background: var(--white);
-    color: var(--text);
-    min-height: 100vh;
-    display: flex;
-  }
+body {
+font-family: 'DM Sans', sans-serif;
+background: #f7f7f7;
+overflow: hidden;
+color: #07113b;
+}
 
-  /* SIDEBAR */
-  .sidebar {
-    width: 280px;
-    min-width: 280px;
-    min-height: 100vh;
-    background: var(--teal-dark);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 3rem 2rem;
-    position: sticky;
-    top: 0;
-    height: 100vh;
-  }
+.container {
+width: 92%;
+max-width: 1450px;
+margin: auto;
+}
 
-  .sidebar-logo { margin-bottom: 2.5rem; text-align: center; }
+header {
+padding: 20px 0;
+border-bottom: 1px solid #d7d7d7;
+}
 
-  .sidebar-icon-wrap {
-    width: 70px; height: 70px;
-    background: rgba(255,255,255,0.1);
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 1.5rem;
-    font-size: 2rem;
-  }
+.navbar {
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
 
-  .sidebar h2 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.3rem;
-    font-weight: 700;
-    color: var(--white);
-    text-align: center;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    margin-bottom: 0.3rem;
-  }
+.logo h1 {
+font-family: 'Playfair Display', serif;
+font-size: 3rem;
+}
 
-  .sidebar .role {
-    font-size: 0.68rem;
-    font-weight: 700;
-    letter-spacing: 0.18em;
-    color: var(--teal);
-    text-transform: uppercase;
-    text-align: center;
-    margin-bottom: 1.5rem;
-  }
+.logo p {
+color: #0b7b82;
+font-weight: 700;
+letter-spacing: 2px;
+margin-top: 10px;
+}
 
-  .sidebar-divider {
-    width: 60px; height: 1px;
-    background: rgba(255,255,255,0.2);
-    margin: 0 auto 1.5rem;
-  }
+nav ul {
+display: flex;
+gap: 70px;
+list-style: none;
+}
 
-  .sidebar-tagline {
-    font-size: 0.88rem;
-    color: rgba(255,255,255,0.7);
-    text-align: center;
-    line-height: 1.5;
-  }
+nav a {
+text-decoration: none;
+color: #07113b;
+font-size: 1.5rem;
+font-weight: 700;
+position: relative;
+}
 
-  .sidebar-footer {
-    margin-top: auto;
-    text-align: center;
-  }
+nav a.active::after {
+content: '';
+position: absolute;
+left: 0;
+bottom: -18px;
+width: 100%;
+height: 5px;
+background: #0b7b82;
+}
 
-  .sidebar-footer p {
-    font-size: 0.72rem;
-    color: rgba(255,255,255,0.4);
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-    justify-content: center;
-  }
+.about {
+height: calc(100vh - 120px);
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
 
-  .checkmark {
-    width: 16px; height: 16px;
-    background: var(--teal);
-    border-radius: 50%;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-  }
+.about-left {
+width: 48%;
+}
 
-  .checkmark svg {
-    width: 10px; height: 10px;
-    stroke: white; fill: none; stroke-width: 2.5;
-  }
+.about-left h2 {
+font-family: 'Playfair Display', serif;
+font-size: 4.5rem;
+margin-bottom: 30px;
+}
 
-  /* CONTENT */
-  .content {
-    flex: 1;
-    padding: 4rem 5rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
+.about-left p {
+font-size: 1.5rem;
+line-height: 1.9;
+}
 
-  .content h1 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 2.8rem;
-    font-weight: 400;
-    color: var(--navy);
-    text-align: center;
-    margin-bottom: 0.6rem;
-  }
+.about-right {
+width: 45%;
+text-align: center;
+}
 
-  .title-underline {
-    width: 50px; height: 3px;
-    background: var(--teal);
-    border-radius: 2px;
-    margin: 0 auto 3rem;
-  }
+.about-right img {
+width: 100%;
+max-width: 550px;
+}
 
-  .about-body {
-    max-width: 680px;
-    margin: 0 auto;
-  }
+@media(max-width: 1000px) {
 
-  .about-body p {
-    font-size: 1rem;
-    color: var(--text-light);
-    line-height: 1.75;
-    margin-bottom: 1.5rem;
-  }
+body {
+overflow-y: auto;
+}
 
-  .back-link-wrap {
-    margin-top: 3rem;
-    padding-top: 2rem;
-    border-top: 1px solid var(--border);
-    max-width: 680px;
-    margin-left: auto;
-    margin-right: auto;
-  }
+.about {
+flex-direction: column;
+height: auto;
+padding: 40px 0;
+text-align: center;
+}
 
-  .back-link {
-    color: var(--teal);
-    text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: 600;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    transition: gap 0.2s;
-  }
+.about-left,
+.about-right {
+width: 100%;
+}
 
-  .back-link:hover { gap: 0.7rem; }
+.about-left h2 {
+font-size: 3rem;
+}
 
-  @media (max-width: 900px) {
-    body { flex-direction: column; }
-    .sidebar { width: 100%; height: auto; min-height: unset; position: relative; padding: 2rem 1.5rem; }
-    .content { padding: 2rem 1.5rem; }
-  }
+.about-left p {
+font-size: 1.1rem;
+}
+
+nav ul {
+gap: 25px;
+}
+
+nav a {
+font-size: 1rem;
+}
+
+.logo h1 {
+font-size: 2rem;
+}
+
+}
+
 </style>
 </head>
 <body>
 
-<aside class="sidebar">
-  <div class="sidebar-logo">
-    <div class="sidebar-icon-wrap">📝</div>
-    <h2>About Me</h2>
-    <p class="role">Technical Writer</p>
-    <div class="sidebar-divider"></div>
-    <p class="sidebar-tagline">Clear documentation for software.</p>
-  </div>
-  <div class="sidebar-footer">
-    <p>&copy; 2026 GOKUL S ANAND <span class="checkmark"><svg viewBox="0 0 10 10"><polyline points="2,5 4,7 8,3"/></svg></span></p>
-  </div>
-</aside>
+<header>
+<div class="container navbar">
 
-<div class="content">
-  <h1>About Me</h1>
-  <div class="title-underline"></div>
-
-  <div class="about-body">
-    <p>I'm a Technical Writer based in Kerala, India.</p>
-    <p>I create clear, structured documentation for software — designed for both beginners and developers.</p>
-    <p>My work includes user guides, installation, API documentation, troubleshooting, and FAQs, built using Markdown and docs-as-code workflows.</p>
-    <p>Focused on simplifying complex systems into usable, accessible documentation.</p>
-    <p>Open to junior Technical Writer roles — India and remote.</p>
-
-    <div class="back-link-wrap">
-      <a href="index.html" class="back-link">&#8592; Back to Home</a>
-    </div>
-  </div>
+<div class="logo">
+<h1>Gokul S Anand</h1>
+<p>TECHNICAL WRITER</p>
 </div>
+
+<nav>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="portfolio.html">Work</a></li>
+<li><a class="active" href="about.html">About</a></li>
+</ul>
+</nav>
+
+</div>
+</header>
+
+<section class="about container">
+
+<div class="about-left">
+<h2>About Me</h2>
+
+<p>
+I create technical documentation focused on clarity, usability, and user experience. My work includes API documentation, installation guides, troubleshooting documentation, FAQs, and user guides for developer and productivity tools.
+<br><br>
+I use Markdown, GitHub, REST APIs, JSON, and modern documentation workflows to build structured and easy-to-understand technical content for both users and developers.
+</p>
+</div>
+
+<div class="about-right">
+<img src="images/about-me.png" alt="about me">
+</div>
+
+</section>
 
 </body>
 </html>
