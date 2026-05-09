@@ -90,21 +90,30 @@
   .cat-title { font-size: 1rem; font-weight: 700; color: var(--navy); }
 
   /* DOC LIST */
-  .doc-list { list-style: none; display: flex; flex-direction: column; gap: 0.55rem; }
+  .doc-list { list-style: none; display: flex; flex-direction: column; gap: 0; }
 
-  .doc-item { display: flex; align-items: center; gap: 0.5rem; font-size: 0.87rem; }
-
-  .doc-item a.name {
-    color: var(--teal-dark); text-decoration: underline; font-weight: 500;
-    transition: color 0.2s; flex: 1;
+  .doc-item {
+    display: grid;
+    grid-template-columns: 1fr 36px 36px;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.87rem;
+    padding: 0.45rem 0;
+    border-bottom: 1px solid #f0f0f0;
   }
-  .doc-item a.name:hover { color: var(--teal); }
+  .doc-item:last-child { border-bottom: none; }
+
+  .doc-item span.name {
+    color: var(--navy); font-weight: 500;
+  }
 
   .badge {
-    display: inline-block; padding: 0.12rem 0.45rem;
+    display: inline-flex; align-items: center; justify-content: center;
+    padding: 0.12rem 0.4rem;
     border-radius: 4px; font-size: 0.65rem; font-weight: 700;
-    letter-spacing: 0.04em; flex-shrink: 0;
+    letter-spacing: 0.04em;
     text-decoration: none; transition: opacity 0.2s;
+    width: 32px;
   }
   .badge:hover { opacity: 0.75; }
   .md  { background: #e8f0fe; color: #1a6db5; border: 1px solid #b8d0f7; }
@@ -147,12 +156,12 @@
     </div>
     <ul class="doc-list">
       <li class="doc-item">
-        <a class="name" href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/api-documentation/postman-api-documentation.md" target="_blank">Postman API Documentation</a>
+        <span class="name">Postman API Documentation</span>
         <a class="badge md" href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/api-documentation/postman-api-documentation.md" target="_blank">MD</a>
         <a class="badge pdf" href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/api-documentation/postman-api-documentation.pdf" target="_blank">PDF</a>
       </li>
       <li class="doc-item">
-        <a class="name" href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/api-documentation/notion-api-documentation.md" target="_blank">Notion API Documentation</a>
+        <span class="name">Notion API Documentation</span>
         <a class="badge md" href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/api-documentation/notion-api-documentation.md" target="_blank">MD</a>
         <a class="badge pdf" href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/api-documentation/notion-api-documentation.pdf" target="_blank">PDF</a>
       </li>
@@ -167,12 +176,12 @@
     </div>
     <ul class="doc-list">
       <li class="doc-item">
-        <a class="name" href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/user-guides/postman-user-guide.md" target="_blank">Postman User Guide</a>
+        <span class="name">Postman User Guide</span>
         <a class="badge md" href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/user-guides/postman-user-guide.md" target="_blank">MD</a>
         <a class="badge pdf" href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/user-guides/postman-user-guide.pdf" target="_blank">PDF</a>
       </li>
       <li class="doc-item">
-        <a class="name" href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/user-guides/visual-studio-coding-user-guide.md" target="_blank">Visual Studio Code User Guide</a>
+        <span class="name">Visual Studio Code User Guide</span>
         <a class="badge md" href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/user-guides/visual-studio-coding-user-guide.md" target="_blank">MD</a>
         <a class="badge pdf" href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/user-guides/visual-studio-coding-user-guide.pdf" target="_blank">PDF</a>
       </li>
@@ -187,12 +196,12 @@
     </div>
     <ul class="doc-list">
       <li class="doc-item">
-        <a class="name" href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/installation-guides/postman-installation-guide.md" target="_blank">Postman Installation Guide</a>
+        <span class="name">Postman Installation Guide</span>
         <a class="badge md" href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/installation-guides/postman-installation-guide.md" target="_blank">MD</a>
         <a class="badge pdf" href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/installation-guides/postman-installation-guide.pdf" target="_blank">PDF</a>
       </li>
       <li class="doc-item">
-        <a class="name" href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/installation-guides/vs-code-installation-guides.md" target="_blank">VS Code Installation Guide</a>
+        <span class="name">VS Code Installation Guide</span>
         <a class="badge md" href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/installation-guides/vs-code-installation-guides.md" target="_blank">MD</a>
         <a class="badge pdf" href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/installation-guides/vs-code-installation-guides.pdf" target="_blank">PDF</a>
       </li>
@@ -207,12 +216,12 @@
     </div>
     <ul class="doc-list">
       <li class="doc-item">
-        <a class="name" href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/troubleshooting-guides/whatsapp-desktop-troubleshooting-guide.md" target="_blank">WhatsApp Desktop Troubleshooting Guide</a>
+        <span class="name">WhatsApp Desktop Troubleshooting Guide</span>
         <a class="badge md" href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/troubleshooting-guides/whatsapp-desktop-troubleshooting-guide.md" target="_blank">MD</a>
         <a class="badge pdf" href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/troubleshooting-guides/whatsapp-desktop-troubleshooting-guide.pdf" target="_blank">PDF</a>
       </li>
       <li class="doc-item">
-        <a class="name" href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/troubleshooting-guides/zoom-desktop-troubleshooting-guide.md" target="_blank">Zoom Desktop Troubleshooting Guide</a>
+        <span class="name">Zoom Desktop Troubleshooting Guide</span>
         <a class="badge md" href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/troubleshooting-guides/zoom-desktop-troubleshooting-guide.md" target="_blank">MD</a>
         <a class="badge pdf" href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/troubleshooting-guides/zoom-desktop-troubleshooting-guide.pdf" target="_blank">PDF</a>
       </li>
@@ -227,12 +236,12 @@
     </div>
     <ul class="doc-list">
       <li class="doc-item">
-        <a class="name" href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/faqs/gmail-web-faq.md" target="_blank">Gmail FAQ</a>
+        <span class="name">Gmail FAQ</span>
         <a class="badge md" href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/faqs/gmail-web-faq.md" target="_blank">MD</a>
         <a class="badge pdf" href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/faqs/gmail-web-faq.pdf" target="_blank">PDF</a>
       </li>
       <li class="doc-item">
-        <a class="name" href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/faqs/google-chrome-faq.md" target="_blank">Google Chrome FAQ</a>
+        <span class="name">Google Chrome FAQ</span>
         <a class="badge md" href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/faqs/google-chrome-faq.md" target="_blank">MD</a>
         <a class="badge pdf" href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/faqs/google-chrome-faq.pdf" target="_blank">PDF</a>
       </li>
