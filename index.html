@@ -1,446 +1,389 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gokul S Anand | Technical Writer</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gokul S Anand — Technical Writer</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  :root {
+    --teal: #2d7d74;
+    --teal-dark: #1f5c55;
+    --teal-light: #e6f2f1;
+    --navy: #0d2b45;
+    --muted: #666;
+    --white: #fff;
+    --border: #e2e2e2;
+  }
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  html, body {
+    height: 100%;
+    overflow: hidden;
+  }
 
-        body {
-            font-family: 'DM Sans', sans-serif;
-            background: #f7f7f7;
-            color: #07113b;
-            overflow: hidden;
-        }
+  body {
+    font-family: 'Raleway', sans-serif;
+    background: var(--white);
+    color: var(--navy);
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
 
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
+  /* NAV */
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 3.5rem;
+    border-bottom: 1px solid var(--border);
+    flex-shrink: 0;
+    position: relative;
+    z-index: 50;
+    background: var(--white);
+  }
 
-        .container {
-            width: 95%;
-            max-width: 1450px;
-            margin: auto;
-        }
+  .brand h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem; font-weight: 600; color: var(--navy);
+  }
+  .brand p {
+    font-size: 0.62rem; font-weight: 700; letter-spacing: 0.2em;
+    color: var(--teal); text-transform: uppercase; margin-top: 1px;
+  }
 
-        header {
-            padding: 20px 0 10px;
-            border-bottom: 1px solid #cfcfcf;
-        }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links a {
+    text-decoration: none; font-size: 0.9rem; font-weight: 500;
+    color: var(--muted); position: relative; padding-bottom: 3px;
+    transition: color 0.2s;
+  }
+  .nav-links a.active { color: var(--teal); }
+  .nav-links a.active::after {
+    content: ''; position: absolute; bottom: 0; left: 0;
+    width: 100%; height: 2px; background: var(--teal); border-radius: 2px;
+  }
+  .nav-links a:hover { color: var(--teal); }
 
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+  /* HERO */
+  .hero {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 3.5rem;
+    min-height: 0;
+    position: relative;
+    overflow: hidden;
+  }
 
-        .logo h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3rem;
-            line-height: 1;
-            color: #07113b;
-        }
+  .hero-left { flex: 1; max-width: 530px; }
 
-        .logo p {
-            color: #0b7b82;
-            font-weight: 700;
-            letter-spacing: 2px;
-            margin-top: 10px;
-            font-size: 1.1rem;
-        }
+  .hero-left h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.9rem, 2.8vw, 2.85rem);
+    font-weight: 600; color: var(--navy); line-height: 1.22;
+    margin-bottom: 1.6rem;
+  }
+  .hero-left h2 span { color: var(--teal); }
 
-        nav ul {
-            display: flex;
-            gap: 70px;
-            list-style: none;
-        }
+  .hero-btns { display: flex; gap: 1rem; }
 
-        nav a {
-            font-weight: 700;
-            font-size: 1.5rem;
-            position: relative;
-        }
+  .btn {
+    padding: 0.78rem 1.9rem;
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.88rem; font-weight: 600;
+    cursor: pointer; border: none;
+    text-decoration: none; display: inline-block;
+    background: var(--teal); color: var(--white);
+    letter-spacing: 0.02em;
+    transition: background 0.2s, transform 0.1s;
+  }
+  .btn:hover { background: var(--teal-dark); transform: translateY(-1px); }
 
-        nav a.active::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: -18px;
-            width: 100%;
-            height: 5px;
-            background: #0b7b82;
-        }
+  /* PHOTO — layered circle + character */
+  .hero-right {
+    flex-shrink: 0;
+    width: 380px;
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
-        .hero {
-            height: calc(100vh - 110px);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 10px 0;
-        }
+  .photo-stack {
+    position: relative;
+    width: 320px;
+    height: 320px;
+  }
 
-        .hero-left {
-            width: 52%;
-        }
+  .photo-stack .circle {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+  }
 
-        .hero-left h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 5rem;
-            line-height: 1.15;
-            margin-bottom: 50px;
-        }
+  .photo-stack .circle img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+  }
 
-        .hero-left h2 span {
-            color: #0b7b82;
-        }
+  .photo-stack .character {
+    position: absolute;
+    bottom: -12%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 78%;
+    z-index: 2;
+    display: block;
+  }
 
-        .hero-buttons {
-            display: flex;
-            gap: 35px;
-        }
+  /* DIVIDER */
+  .divider { border: none; border-top: 1px solid var(--border); margin: 0 3.5rem; flex-shrink: 0; }
 
-        .hero-buttons a,
-        .hero-buttons button {
-            background: #0b7b82;
-            border: none;
-            color: white;
-            padding: 22px 55px;
-            border-radius: 10px;
-            font-size: 1.5rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: 0.3s ease;
-        }
+  /* WHAT I DO */
+  .what-i-do { padding: 0.9rem 3.5rem 0.75rem; flex-shrink: 0; }
 
-        .hero-buttons a:hover,
-        .hero-buttons button:hover {
-            transform: translateY(-3px);
-            background: #09666c;
-        }
+  .what-i-do h3 { font-size: 0.92rem; font-weight: 700; color: var(--navy); margin-bottom: 0.3rem; }
+  .section-bar { width: 26px; height: 3px; background: var(--teal); border-radius: 2px; margin-bottom: 0.8rem; }
 
-        .hero-right {
-            width: 42%;
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+  .svc-grid { display: grid; grid-template-columns: repeat(5,1fr); border: 1px solid var(--border); }
 
-        .circle {
-            width: 700px;
-            position: absolute;
-            z-index: 1;
-        }
+  .svc-item {
+    padding: 1rem 0.8rem; text-align: center;
+    border-right: 1px solid var(--border);
+  }
+  .svc-item:last-child { border-right: none; }
 
-        .character {
-            width: 560px;
-            position: relative;
-            z-index: 2;
-        }
+  .svc-ico {
+    width: 40px; height: 40px; border-radius: 50%;
+    background: var(--teal-light);
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 0.6rem;
+  }
+  .svc-ico svg { width: 19px; height: 19px; stroke: var(--teal); fill: none; stroke-width: 1.8; }
 
-        .modal {
-            position: fixed;
-            inset: 0;
-            background: rgba(0,0,0,0.5);
-            display: none;
-            justify-content: center;
-            align-items: center;
-            z-index: 999;
-            padding: 20px;
-        }
+  .svc-num { font-size: 0.78rem; font-weight: 700; color: var(--teal); margin-bottom: 0.2rem; }
+  .svc-title { font-size: 0.8rem; font-weight: 700; color: var(--navy); margin-bottom: 0.1rem; }
+  .svc-sub { font-size: 0.7rem; color: var(--muted); }
 
-        .modal.active {
-            display: flex;
-        }
+  /* TOOLS */
+  .tools { padding: 0.7rem 3.5rem 0.85rem; flex-shrink: 0; }
+  .tools h3 { font-size: 0.92rem; font-weight: 700; color: var(--navy); margin-bottom: 0.65rem; }
 
-        .modal-content {
-            width: 100%;
-            max-width: 1000px;
-            background: #f7f7f7;
-            border: 18px solid #0b7b82;
-            border-radius: 35px;
-            padding: 45px;
-            position: relative;
-        }
+  .tools-grid { display: flex; border: 1px solid var(--border); }
+  .tool {
+    display: flex; align-items: center; gap: 0.45rem;
+    padding: 0.65rem 1.2rem;
+    border-right: 1px solid var(--border);
+    font-size: 0.8rem; font-weight: 500;
+    flex: 1; justify-content: center;
+  }
+  .tool:last-child { border-right: none; }
+  .tool svg { width: 19px; height: 19px; flex-shrink: 0; }
 
-        .close-btn {
-            position: absolute;
-            right: 25px;
-            top: 25px;
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            border: 3px solid #cfdede;
-            background: transparent;
-            font-size: 2.2rem;
-            color: #0b7b82;
-            cursor: pointer;
-        }
+  /* FOOTER */
+  footer {
+    text-align: center; padding: 0.5rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.73rem; color: var(--muted); flex-shrink: 0;
+  }
 
-        .modal-top {
-            text-align: center;
-        }
+  /* MODAL */
+  .overlay {
+    display: none; position: fixed; inset: 0;
+    background: rgba(0,0,0,0.45); z-index: 100;
+    align-items: center; justify-content: center;
+  }
+  .overlay.open { display: flex; }
 
-        .modal-top img {
-            width: 140px;
-            margin-bottom: 20px;
-        }
+  .modal {
+    background: var(--white); border-radius: 16px;
+    border: 2px solid var(--teal);
+    padding: 2rem 1.8rem; width: 90%; max-width: 450px;
+    position: relative; text-align: center;
+    animation: popIn 0.22s ease;
+  }
+  @keyframes popIn { from{transform:scale(0.9);opacity:0} to{transform:scale(1);opacity:1} }
 
-        .modal-top h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 4rem;
-            margin-bottom: 10px;
-        }
+  .modal-close {
+    position: absolute; top: 0.85rem; right: 0.85rem;
+    background: none; border: 1.5px solid var(--border);
+    border-radius: 50%; width: 28px; height: 28px;
+    cursor: pointer; font-size: 0.8rem; color: var(--muted);
+    display: flex; align-items: center; justify-content: center;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .modal-close:hover { border-color: var(--teal); color: var(--teal); }
 
-        .line {
-            width: 90px;
-            height: 7px;
-            background: #0b7b82;
-            margin: 20px auto 35px;
-            border-radius: 30px;
-        }
+  .modal-ico {
+    width: 50px; height: 50px; border-radius: 50%;
+    background: var(--teal-light);
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 0.9rem;
+  }
+  .modal-ico svg { width: 22px; height: 22px; stroke: var(--teal); fill: none; stroke-width: 1.8; }
 
-        .modal-top p {
-            font-size: 2rem;
-            line-height: 1.5;
-            margin-bottom: 45px;
-        }
+  .modal h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.85rem; font-weight: 600; color: var(--navy); margin-bottom: 0.3rem;
+  }
+  .modal-bar { width: 34px; height: 3px; background: var(--teal); border-radius: 2px; margin: 0 auto 0.8rem; }
+  .modal p { font-size: 0.85rem; color: var(--muted); margin-bottom: 1.3rem; line-height: 1.55; }
 
-        .contact-card {
-            border: 2px solid #d8dede;
-            border-radius: 22px;
-            padding: 25px 35px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 25px;
-            background: white;
-        }
+  .clinks { display: flex; flex-direction: column; gap: 0.65rem; }
 
-        .contact-left {
-            display: flex;
-            align-items: center;
-            gap: 25px;
-        }
+  .clink {
+    display: flex; align-items: center; gap: 0.85rem;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--border); border-radius: 10px;
+    text-decoration: none; color: var(--navy);
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .clink:hover { border-color: var(--teal); background: var(--teal-light); }
 
-        .contact-left img {
-            width: 90px;
-        }
+  .cico {
+    width: 36px; height: 36px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+  .cico svg { width: 17px; height: 17px; }
+  .cico.email { background: var(--teal); }
+  .cico.email svg { stroke: white; fill: none; stroke-width: 1.8; }
+  .cico.linkedin { background: #0077b5; }
+  .cico.linkedin svg { fill: white; }
+  .cico.github { background: #1a1a2e; }
+  .cico.github svg { fill: white; }
 
-        .contact-info h3 {
-            font-size: 2.3rem;
-            margin-bottom: 8px;
-        }
-
-        .contact-info p {
-            color: #0b7b82;
-            font-size: 1.5rem;
-        }
-
-        .arrow {
-            font-size: 3rem;
-            color: #0b7b82;
-        }
-
-        @media(max-width: 1100px) {
-            body {
-                overflow-y: auto;
-            }
-
-            .hero {
-                height: auto;
-                flex-direction: column;
-                text-align: center;
-                padding: 40px 0;
-            }
-
-            .hero-left,
-            .hero-right {
-                width: 100%;
-            }
-
-            .hero-left h2 {
-                font-size: 3rem;
-            }
-
-            .hero-buttons {
-                justify-content: center;
-                flex-wrap: wrap;
-            }
-
-            .circle {
-                width: 100%;
-                max-width: 500px;
-            }
-
-            .character {
-                width: 90%;
-                max-width: 420px;
-            }
-
-            nav ul {
-                gap: 25px;
-            }
-
-            nav a {
-                font-size: 1rem;
-            }
-
-            .logo h1 {
-                font-size: 2rem;
-            }
-
-            .modal-content {
-                padding: 30px 20px;
-            }
-
-            .modal-top h2 {
-                font-size: 2.5rem;
-            }
-
-            .modal-top p {
-                font-size: 1.2rem;
-            }
-
-            .contact-card {
-                padding: 18px;
-            }
-
-            .contact-info h3 {
-                font-size: 1.4rem;
-            }
-
-            .contact-info p {
-                font-size: 1rem;
-            }
-        }
-    </style>
+  .ctxt { flex: 1; text-align: left; }
+  .ctxt strong { display: block; font-size: 0.86rem; font-weight: 700; color: var(--navy); margin-bottom: 0.08rem; }
+  .ctxt span { font-size: 0.74rem; color: var(--teal); }
+  .carrow { color: var(--muted); font-size: 1rem; }
+</style>
 </head>
 <body>
 
-<header>
-    <div class="container navbar">
+<nav>
+  <div class="brand">
+    <h1>Gokul S Anand</h1>
+    <p>Technical Writer</p>
+  </div>
+  <ul class="nav-links">
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="portfolio.html">Work</a></li>
+    <li><a href="about.html">About</a></li>
+  </ul>
+</nav>
 
-        <div class="logo">
-            <h1>Gokul S Anand</h1>
-            <p>TECHNICAL WRITER</p>
-        </div>
-
-        <nav>
-            <ul>
-                <li><a class="active" href="index.html">Home</a></li>
-                <li><a href="portfolio.html">Work</a></li>
-                <li><a href="about.html">About</a></li>
-            </ul>
-        </nav>
-
+<section class="hero">
+  <div class="hero-left">
+    <h2>I create clear, concise, and user-focused documentation for <span>users and developers.</span></h2>
+    <div class="hero-btns">
+      <a href="portfolio.html" class="btn">View My Work</a>
+      <button class="btn" onclick="document.getElementById('modal').classList.add('open')">Contact Me</button>
     </div>
-</header>
-
-<section class="hero container">
-
-    <div class="hero-left">
-        <h2>
-            I create clear, concise, and <br>
-            user-focused documentation <br>
-            for <span>users and developers.</span>
-        </h2>
-
-        <div class="hero-buttons">
-            <a href="portfolio.html">View My Work</a>
-            <button id="contactBtn">Contact Me</button>
-        </div>
+  </div>
+  <div class="hero-right">
+    <div class="photo-stack">
+      <!-- Teal circle background -->
+      <div class="circle">
+        <img src="images/teal-circle.png" alt="">
+      </div>
+      <!-- Character on top -->
+      <img class="character" src="images/my-character.png" alt="Gokul S Anand">
     </div>
-
-    <div class="hero-right">
-        <img src="images/teal-circle.png" class="circle" alt="circle">
-        <img src="images/my-character.png" class="character" alt="character">
-    </div>
-
+  </div>
 </section>
 
-<div class="modal" id="contactModal">
+<hr class="divider">
 
-    <div class="modal-content">
-
-        <button class="close-btn" id="closeBtn">✕</button>
-
-        <div class="modal-top">
-            <img src="images/contact-popup.png" alt="contact">
-            <h2>Get In Touch</h2>
-            <div class="line"></div>
-            <p>Feel free to reach out through any of the platforms below.</p>
-        </div>
-
-        <a href="mailto:connectgokultwr@gmail.com" target="_blank">
-            <div class="contact-card">
-                <div class="contact-left">
-                    <img src="https://cdn-icons-png.flaticon.com/512/561/561127.png">
-                    <div class="contact-info">
-                        <h3>Email Me</h3>
-                        <p>connectgokultwr@gmail.com</p>
-                    </div>
-                </div>
-                <div class="arrow">›</div>
-            </div>
-        </a>
-
-        <a href="https://www.linkedin.com/in/gokul-s-anand" target="_blank">
-            <div class="contact-card">
-                <div class="contact-left">
-                    <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png">
-                    <div class="contact-info">
-                        <h3>LinkedIn</h3>
-                        <p>linkedin.com/in/gokul-s-anand</p>
-                    </div>
-                </div>
-                <div class="arrow">›</div>
-            </div>
-        </a>
-
-        <a href="https://github.com/Gokul-Techwriter" target="_blank">
-            <div class="contact-card">
-                <div class="contact-left">
-                    <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png">
-                    <div class="contact-info">
-                        <h3>GitHub</h3>
-                        <p>github.com/Gokul-Techwriter</p>
-                    </div>
-                </div>
-                <div class="arrow">›</div>
-            </div>
-        </a>
-
+<section class="what-i-do">
+  <h3>What I Do</h3>
+  <div class="section-bar"></div>
+  <div class="svc-grid">
+    <div class="svc-item">
+      <div class="svc-ico"><svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
+      <div class="svc-num">01</div><div class="svc-title">User Guides</div><div class="svc-sub">Product guides.</div>
     </div>
+    <div class="svc-item">
+      <div class="svc-ico"><svg viewBox="0 0 24 24"><path d="M12 2v12"/><path d="m8 14 4 4 4-4"/><rect x="2" y="18" width="20" height="4" rx="1"/></svg></div>
+      <div class="svc-num">02</div><div class="svc-title">Installation</div><div class="svc-sub">Setup docs.</div>
+    </div>
+    <div class="svc-item">
+      <div class="svc-ico"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+      <div class="svc-num">03</div><div class="svc-title">Troubleshooting</div><div class="svc-sub">Issue resolution.</div>
+    </div>
+    <div class="svc-item">
+      <div class="svc-ico"><svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
+      <div class="svc-num">04</div><div class="svc-title">API Documentation</div><div class="svc-sub">API references.</div>
+    </div>
+    <div class="svc-item">
+      <div class="svc-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+      <div class="svc-num">05</div><div class="svc-title">FAQ Documentation</div><div class="svc-sub">Help center content.</div>
+    </div>
+  </div>
+</section>
 
+<section class="tools">
+  <h3>Tools &amp; Technologies</h3>
+  <div class="tools-grid">
+    <div class="tool">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#2d7d74" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M6 15V9l3 3 3-3v6"/><path d="M17 12h-2m2 0-2-3m2 3-2 3"/></svg>Markdown
+    </div>
+    <div class="tool">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#f05033" stroke-width="1.8"><circle cx="6" cy="6" r="2"/><circle cx="18" cy="6" r="2"/><circle cx="12" cy="18" r="2"/><path d="M6 8v4a2 2 0 0 0 2 2h4"/><path d="M18 8v4a2 2 0 0 1-2 2h-4"/></svg>Git
+    </div>
+    <div class="tool">
+      <svg viewBox="0 0 24 24" fill="#1a1a2e"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>GitHub
+    </div>
+    <div class="tool">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#2d7d74" stroke-width="1.8"><path d="M8 3H7a2 2 0 0 0-2 2v5a2 2 0 0 1-2 2 2 2 0 0 1 2 2v5c0 1.1.9 2 2 2h1"/><path d="M16 21h1a2 2 0 0 0 2-2v-5a2 2 0 0 1 2-2 2 2 0 0 1-2-2V5a2 2 0 0 0-2-2h-1"/></svg>JSON
+    </div>
+    <div class="tool">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#2d7d74" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 12h8"/><path d="m12 8 4 4-4 4"/></svg>REST API
+    </div>
+    <div class="tool">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#ef5b25" stroke-width="1.8"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4 20-7z"/></svg>Postman
+    </div>
+  </div>
+</section>
+
+<footer>&copy; 2026 Gokul S Anand. All rights reserved.</footer>
+
+<!-- Contact Modal -->
+<div class="overlay" id="modal" onclick="if(event.target===this)this.classList.remove('open')">
+  <div class="modal">
+    <button class="modal-close" onclick="document.getElementById('modal').classList.remove('open')">&#x2715;</button>
+    <div class="modal-ico">
+      <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+    </div>
+    <h2>Get In Touch</h2>
+    <div class="modal-bar"></div>
+    <p>Feel free to reach out through any of the platforms below.</p>
+    <div class="clinks">
+      <a href="mailto:connectgokultwr@gmail.com" class="clink">
+        <div class="cico email"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></div>
+        <div class="ctxt"><strong>Email Me</strong><span>connectgokultwr@gmail.com</span></div>
+        <span class="carrow">&#8250;</span>
+      </a>
+      <a href="https://linkedin.com/in/gokul-s-anand" target="_blank" class="clink">
+        <div class="cico linkedin"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></div>
+        <div class="ctxt"><strong>LinkedIn</strong><span>linkedin.com/in/gokul-s-anand</span></div>
+        <span class="carrow">&#8250;</span>
+      </a>
+      <a href="https://github.com/gokulsanand" target="_blank" class="clink">
+        <div class="cico github"><svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg></div>
+        <div class="ctxt"><strong>GitHub</strong><span>github.com/gokulsanand</span></div>
+        <span class="carrow">&#8250;</span>
+      </a>
+    </div>
+  </div>
 </div>
-
-<script>
-
-const contactBtn = document.getElementById('contactBtn');
-const modal = document.getElementById('contactModal');
-const closeBtn = document.getElementById('closeBtn');
-
-contactBtn.addEventListener('click', () => {
-    modal.classList.add('active');
-});
-
-closeBtn.addEventListener('click', () => {
-    modal.classList.remove('active');
-});
-
-</script>
 
 </body>
 </html>
