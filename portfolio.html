@@ -3,273 +3,242 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portfolio | Gokul S Anand</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
-
+<title>Work — Gokul S Anand</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-body {
-    margin: 0;
-    background: #f7f7f7;
-    font-family: 'DM Sans', sans-serif;
-    color: #07113b;
-}
+  :root {
+    --teal: #2d7d74;
+    --teal-dark: #1f5c55;
+    --teal-light: #e6f2f1;
+    --navy: #0d2b45;
+    --muted: #666;
+    --white: #fff;
+    --border: #e2e2e2;
+  }
 
-.container {
-    display: flex;
+  body {
+    font-family: 'Raleway', sans-serif;
+    background: var(--white);
+    color: var(--navy);
     min-height: 100vh;
-}
-
-.sidebar {
-    width: 330px;
-    background: #006d77;
-    color: white;
-    padding: 50px 35px;
-}
-
-.sidebar img {
-    width: 120px;
-    display: block;
-    margin: 40px auto;
-}
-
-.sidebar h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 3rem;
-}
-
-.sidebar p {
-    font-size: 1.1rem;
-    line-height: 1.8;
-}
-
-.main {
-    flex: 1;
-    padding: 50px;
-}
-
-.small-title {
-    color: #006d77;
-    font-weight: 700;
-    font-size: 1.3rem;
-}
-
-.main h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 5rem;
-    margin: 10px 0;
-}
-
-.desc {
-    font-size: 1.5rem;
-    margin-bottom: 50px;
-    line-height: 1.7;
-}
-
-.section {
-    border-top: 1px solid #d6d6d6;
-    padding: 35px 0;
     display: flex;
-    gap: 35px;
-}
+  }
 
-.section-icon img {
-    width: 90px;
-}
+  /* SIDEBAR */
+  .sidebar {
+    width: 260px; min-width: 260px;
+    background: var(--teal-dark);
+    display: flex; flex-direction: column;
+    align-items: center; padding: 2.5rem 1.5rem;
+    position: sticky; top: 0; height: 100vh;
+  }
 
-.section-content h3 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-}
+  .quill { width: 70px; height: 70px; margin: 0 auto 1.3rem; }
+  .quill svg { width: 70px; height: 70px; }
 
-.work-item {
-    margin-bottom: 18px;
-    font-size: 1.2rem;
-}
+  .sidebar h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem; font-weight: 600; color: var(--white);
+    text-align: center; line-height: 1.2; margin-bottom: 0.25rem;
+  }
+  .sidebar .role {
+    font-size: 0.63rem; font-weight: 700; letter-spacing: 0.18em;
+    color: rgba(255,255,255,0.55); text-transform: uppercase;
+    text-align: center; margin-bottom: 1.3rem;
+  }
+  .sdiv { width: 50px; height: 1px; background: rgba(255,255,255,0.18); margin: 0 auto 1.2rem; }
+  .stag { font-size: 0.83rem; color: rgba(255,255,255,0.65); text-align: center; line-height: 1.5; }
+  .sfooter { margin-top: auto; text-align: center; }
+  .sfooter p {
+    font-size: 0.68rem; color: rgba(255,255,255,0.35);
+    text-transform: uppercase; letter-spacing: 0.1em;
+    display: flex; align-items: center; gap: 0.4rem; justify-content: center;
+  }
+  .chk {
+    width: 15px; height: 15px; border-radius: 50%;
+    background: var(--teal);
+    display: inline-flex; align-items: center; justify-content: center;
+  }
+  .chk svg { width: 9px; height: 9px; stroke: white; fill: none; stroke-width: 2.5; }
 
-.work-item a {
-    color: #0b4b7a;
-    text-decoration: underline;
-}
+  /* CONTENT */
+  .content { flex: 1; padding: 3rem 3.5rem; overflow-y: auto; }
 
-.btn {
-    display: inline-block;
-    padding: 6px 14px;
-    border-radius: 8px;
-    margin-left: 12px;
-    font-weight: 700;
-    font-size: 0.9rem;
-}
+  .plabel { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.22em; color: var(--teal); text-transform: uppercase; margin-bottom: 0.4rem; }
+  .pbar { width: 28px; height: 2px; background: var(--teal); margin-bottom: 1rem; }
 
-.md {
-    border: 2px solid #0b7b82;
-    color: #0b7b82;
-}
+  .content h1 { font-family: 'Cormorant Garamond', serif; font-size: 3rem; font-weight: 400; color: var(--navy); margin-bottom: 0.6rem; }
+  .intro { font-size: 0.9rem; color: var(--muted); margin-bottom: 2.5rem; line-height: 1.6; }
 
-.pdf {
-    border: 2px solid #d54a4a;
-    color: #d54a4a;
-}
+  /* CATEGORY */
+  .cat { margin-bottom: 2rem; }
 
-@media(max-width: 900px) {
+  .cat-head {
+    display: flex; align-items: center; gap: 1rem;
+    margin-bottom: 1rem; padding-bottom: 0.7rem;
+    border-bottom: 1px solid var(--border);
+  }
 
-.container {
-    flex-direction: column;
-}
+  .cat-ico {
+    width: 40px; height: 40px; border-radius: 50%;
+    background: var(--teal-light);
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+  .cat-ico svg { width: 18px; height: 18px; stroke: var(--teal); fill: none; stroke-width: 1.8; }
+  .cat-title { font-size: 1rem; font-weight: 700; color: var(--navy); }
 
-.sidebar {
-    width: auto;
-}
+  /* DOC LIST */
+  .doc-list { list-style: none; display: flex; flex-direction: column; gap: 0.55rem; }
 
-.main {
-    padding: 30px 20px;
-}
+  .doc-item { display: flex; align-items: center; gap: 0.5rem; font-size: 0.87rem; }
 
-.main h2 {
-    font-size: 3rem;
-}
+  .doc-item a.name {
+    color: var(--teal-dark); text-decoration: underline; font-weight: 500;
+    transition: color 0.2s; flex: 1;
+  }
+  .doc-item a.name:hover { color: var(--teal); }
 
-.section {
-    flex-direction: column;
-}
-
-}
-
+  .badge {
+    display: inline-block; padding: 0.12rem 0.45rem;
+    border-radius: 4px; font-size: 0.65rem; font-weight: 700;
+    letter-spacing: 0.04em; flex-shrink: 0;
+    text-decoration: none; transition: opacity 0.2s;
+  }
+  .badge:hover { opacity: 0.75; }
+  .md  { background: #e8f0fe; color: #1a6db5; border: 1px solid #b8d0f7; }
+  .pdf { background: #fdecea; color: #c0392b; border: 1px solid #f5b7b1; }
 </style>
 </head>
 <body>
 
-<div class="container">
+<aside class="sidebar">
+  <div class="quill">
+    <svg viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <ellipse cx="33" cy="58" rx="15" ry="6" fill="rgba(0,0,0,0.35)"/>
+      <path d="M19 51 Q17 44 21 38 Q25 32 33 31 Q41 32 45 38 Q49 44 47 51 Q45 58 33 60 Q21 58 19 51Z" fill="#111"/>
+      <path d="M33 34 Q51 8 64 6 Q56 18 46 27 Q40 33 35 34Z" fill="rgba(255,255,255,0.88)"/>
+      <path d="M33 34 Q45 15 58 10 Q52 22 42 30 Q38 33 35 34Z" fill="rgba(255,255,255,0.45)"/>
+      <path d="M33 34 L37 49" stroke="rgba(255,255,255,0.55)" stroke-width="1.4" stroke-linecap="round"/>
+      <path d="M35 47 Q33 51 34 55" stroke="rgba(255,255,255,0.75)" stroke-width="1.4" stroke-linecap="round"/>
+    </svg>
+  </div>
+  <h2>Gokul S Anand</h2>
+  <p class="role">Technical Writer</p>
+  <div class="sdiv"></div>
+  <p class="stag">Clear documentation for users and developers.</p>
+  <div class="sfooter">
+    <p>&copy; 2026 GOKUL S ANAND <span class="chk"><svg viewBox="0 0 10 10"><polyline points="2,5 4,7 8,3"/></svg></span></p>
+  </div>
+</aside>
 
-<div class="sidebar">
+<div class="content">
+  <div class="plabel">WORK</div>
+  <div class="pbar"></div>
+  <h1>Portfolio</h1>
+  <p class="intro">10 documents covering developer and productivity tools — written in Markdown, managed on GitHub.</p>
 
-<img src="images/work-portfolio.png">
+  <!-- API Documentation -->
+  <div class="cat">
+    <div class="cat-head">
+      <div class="cat-ico"><svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
+      <span class="cat-title">API Documentation</span>
+    </div>
+    <ul class="doc-list">
+      <li class="doc-item">
+        <a class="name" href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/api-documentation/postman-api-documentation.md" target="_blank">Postman API Documentation</a>
+        <a class="badge md" href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/api-documentation/postman-api-documentation.md" target="_blank">MD</a>
+        <a class="badge pdf" href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/api-documentation/postman-api-documentation.pdf" target="_blank">PDF</a>
+      </li>
+      <li class="doc-item">
+        <a class="name" href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/api-documentation/notion-api-documentation.md" target="_blank">Notion API Documentation</a>
+        <a class="badge md" href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/api-documentation/notion-api-documentation.md" target="_blank">MD</a>
+        <a class="badge pdf" href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/api-documentation/notion-api-documentation.pdf" target="_blank">PDF</a>
+      </li>
+    </ul>
+  </div>
 
-<h1>Gokul S Anand</h1>
+  <!-- User Guides -->
+  <div class="cat">
+    <div class="cat-head">
+      <div class="cat-ico"><svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
+      <span class="cat-title">User Guides</span>
+    </div>
+    <ul class="doc-list">
+      <li class="doc-item">
+        <a class="name" href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/user-guides/postman-user-guide.md" target="_blank">Postman User Guide</a>
+        <a class="badge md" href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/user-guides/postman-user-guide.md" target="_blank">MD</a>
+        <a class="badge pdf" href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/user-guides/postman-user-guide.pdf" target="_blank">PDF</a>
+      </li>
+      <li class="doc-item">
+        <a class="name" href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/user-guides/visual-studio-coding-user-guide.md" target="_blank">Visual Studio Code User Guide</a>
+        <a class="badge md" href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/user-guides/visual-studio-coding-user-guide.md" target="_blank">MD</a>
+        <a class="badge pdf" href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/user-guides/visual-studio-coding-user-guide.pdf" target="_blank">PDF</a>
+      </li>
+    </ul>
+  </div>
 
-<p>TECHNICAL WRITER</p>
+  <!-- Installation Guides -->
+  <div class="cat">
+    <div class="cat-head">
+      <div class="cat-ico"><svg viewBox="0 0 24 24"><path d="M12 2v12"/><path d="m8 14 4 4 4-4"/><rect x="2" y="18" width="20" height="4" rx="1"/></svg></div>
+      <span class="cat-title">Installation Guides</span>
+    </div>
+    <ul class="doc-list">
+      <li class="doc-item">
+        <a class="name" href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/installation-guides/postman-installation-guide.md" target="_blank">Postman Installation Guide</a>
+        <a class="badge md" href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/installation-guides/postman-installation-guide.md" target="_blank">MD</a>
+        <a class="badge pdf" href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/installation-guides/postman-installation-guide.pdf" target="_blank">PDF</a>
+      </li>
+      <li class="doc-item">
+        <a class="name" href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/installation-guides/vs-code-installation-guides.md" target="_blank">VS Code Installation Guide</a>
+        <a class="badge md" href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/installation-guides/vs-code-installation-guides.md" target="_blank">MD</a>
+        <a class="badge pdf" href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/installation-guides/vs-code-installation-guides.pdf" target="_blank">PDF</a>
+      </li>
+    </ul>
+  </div>
 
-<br><br>
+  <!-- Troubleshooting Guides -->
+  <div class="cat">
+    <div class="cat-head">
+      <div class="cat-ico"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+      <span class="cat-title">Troubleshooting Guides</span>
+    </div>
+    <ul class="doc-list">
+      <li class="doc-item">
+        <a class="name" href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/troubleshooting-guides/whatsapp-desktop-troubleshooting-guide.md" target="_blank">WhatsApp Desktop Troubleshooting Guide</a>
+        <a class="badge md" href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/troubleshooting-guides/whatsapp-desktop-troubleshooting-guide.md" target="_blank">MD</a>
+        <a class="badge pdf" href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/troubleshooting-guides/whatsapp-desktop-troubleshooting-guide.pdf" target="_blank">PDF</a>
+      </li>
+      <li class="doc-item">
+        <a class="name" href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/troubleshooting-guides/zoom-desktop-troubleshooting-guide.md" target="_blank">Zoom Desktop Troubleshooting Guide</a>
+        <a class="badge md" href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/troubleshooting-guides/zoom-desktop-troubleshooting-guide.md" target="_blank">MD</a>
+        <a class="badge pdf" href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/troubleshooting-guides/zoom-desktop-troubleshooting-guide.pdf" target="_blank">PDF</a>
+      </li>
+    </ul>
+  </div>
 
-<p>Clear documentation for users and developers.</p>
+  <!-- FAQ Documentation -->
+  <div class="cat">
+    <div class="cat-head">
+      <div class="cat-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+      <span class="cat-title">FAQ Documentation</span>
+    </div>
+    <ul class="doc-list">
+      <li class="doc-item">
+        <a class="name" href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/faqs/gmail-web-faq.md" target="_blank">Gmail FAQ</a>
+        <a class="badge md" href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/faqs/gmail-web-faq.md" target="_blank">MD</a>
+        <a class="badge pdf" href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/faqs/gmail-web-faq.pdf" target="_blank">PDF</a>
+      </li>
+      <li class="doc-item">
+        <a class="name" href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/faqs/google-chrome-faq.md" target="_blank">Google Chrome FAQ</a>
+        <a class="badge md" href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/faqs/google-chrome-faq.md" target="_blank">MD</a>
+        <a class="badge pdf" href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/faqs/google-chrome-faq.pdf" target="_blank">PDF</a>
+      </li>
+    </ul>
+  </div>
 
 </div>
-
-<div class="main">
-
-<div class="small-title">WORK</div>
-
-<h2>Portfolio</h2>
-
-<p class="desc">
-10 documents covering developer and productivity tools — written in Markdown, managed on GitHub.
-</p>
-
-<div class="section">
-<div class="section-icon"><img src="https://cdn-icons-png.flaticon.com/512/2721/2721297.png"></div>
-<div class="section-content">
-<h3>API Documentation</h3>
-
-<div class="work-item">
-<a href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/api-documentation%2Fpostman-api-documentation.md" target="_blank">Postman API Documentation</a>
-<a class="btn md" href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/api-documentation%2Fpostman-api-documentation.md" target="_blank">MD</a>
-<a class="btn pdf" href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/api-documentation%2Fpostman-api-documentation.pdf" target="_blank">PDF</a>
-</div>
-
-<div class="work-item">
-<a href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/api-documentation%2Fnotion-api-documentation.md" target="_blank">Notion API Documentation</a>
-<a class="btn md" href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/api-documentation%2Fnotion-api-documentation.md" target="_blank">MD</a>
-<a class="btn pdf" href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/api-documentation%2Fnotion-api-documentation.pdf" target="_blank">PDF</a>
-</div>
-
-</div>
-</div>
-
-<div class="section">
-<div class="section-icon"><img src="https://cdn-icons-png.flaticon.com/512/2541/2541988.png"></div>
-<div class="section-content">
-<h3>User Guides</h3>
-
-<div class="work-item">
-<a href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/user-guides%2Fvisual-studio-coding-user-guide.md" target="_blank">Visual Studio Code User Guide</a>
-<a class="btn md" href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/user-guides%2Fvisual-studio-coding-user-guide.md" target="_blank">MD</a>
-<a class="btn pdf" href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/user-guides%2Fvisual-studio-coding-user-guide.pdf" target="_blank">PDF</a>
-</div>
-
-<div class="work-item">
-<a href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/user-guides%2Fpostman-user-guide.md" target="_blank">Postman User Guide</a>
-<a class="btn md" href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/user-guides%2Fpostman-user-guide.md" target="_blank">MD</a>
-<a class="btn pdf" href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/user-guides%2Fpostman-user-guide.pdf" target="_blank">PDF</a>
-</div>
-
-</div>
-</div>
-
-<div class="section">
-<div class="section-icon"><img src="https://cdn-icons-png.flaticon.com/512/724/724933.png"></div>
-<div class="section-content">
-<h3>Installation Guides</h3>
-
-<div class="work-item">
-<a href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/installation-guides%2Fpostman-installation-guide.md" target="_blank">Postman Installation Guide</a>
-<a class="btn md" href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/installation-guides%2Fpostman-installation-guide.md" target="_blank">MD</a>
-<a class="btn pdf" href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/installation-guides%2Fpostman-installation-guide.pdf" target="_blank">PDF</a>
-</div>
-
-<div class="work-item">
-<a href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/installation-guides%2Fvs-code-installation-guides.md" target="_blank">VS Code Installation Guide</a>
-<a class="btn md" href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/installation-guides%2Fvs-code-installation-guides.md" target="_blank">MD</a>
-<a class="btn pdf" href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/installation-guides%2Fvs-code-installation-guides.pdf" target="_blank">PDF</a>
-</div>
-
-</div>
-</div>
-
-<div class="section">
-<div class="section-icon"><img src="https://cdn-icons-png.flaticon.com/512/1001/1001371.png"></div>
-<div class="section-content">
-<h3>Troubleshooting Guides</h3>
-
-<div class="work-item">
-<a href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/troubleshooting-guides%2Fwhatsapp-desktop-troubleshooting-guide.md" target="_blank">WhatsApp Desktop Troubleshooting Guide</a>
-<a class="btn md" href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/troubleshooting-guides%2Fwhatsapp-desktop-troubleshooting-guide.md" target="_blank">MD</a>
-<a class="btn pdf" href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/troubleshooting-guides%2Fwhatsapp-desktop-troubleshooting-guide.pdf" target="_blank">PDF</a>
-</div>
-
-<div class="work-item">
-<a href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/troubleshooting-guides%2Fzoom-desktop-troubleshooting-guide.md" target="_blank">Zoom Desktop Troubleshooting Guide</a>
-<a class="btn md" href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/troubleshooting-guides%2Fzoom-desktop-troubleshooting-guide.md" target="_blank">MD</a>
-<a class="btn pdf" href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/troubleshooting-guides%2Fzoom-desktop-troubleshooting-guide.pdf" target="_blank">PDF</a>
-</div>
-
-</div>
-</div>
-
-<div class="section">
-<div class="section-icon"><img src="https://cdn-icons-png.flaticon.com/512/471/471664.png"></div>
-<div class="section-content">
-<h3>FAQ Documentation</h3>
-
-<div class="work-item">
-<a href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/faqs%2Fgmail-web-faq.md" target="_blank">Gmail FAQ</a>
-<a class="btn md" href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/faqs%2Fgmail-web-faq.md" target="_blank">MD</a>
-<a class="btn pdf" href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/faqs%2Fgmail-web-faq.pdf" target="_blank">PDF</a>
-</div>
-
-<div class="work-item">
-<a href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/faqs%2Fgoogle-chrome-faq.md" target="_blank">Google Chrome FAQ</a>
-<a class="btn md" href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/faqs%2Fgoogle-chrome-faq.md" target="_blank">MD</a>
-<a class="btn pdf" href="https://github.com/Gokul-Techwriter/technical-writing-portfolio/blob/main/faqs%2Fgoogle-chrome-faq.pdf" target="_blank">PDF</a>
-</div>
-
-</div>
-</div>
-
-</div>
-</div>
-
 </body>
 </html>
