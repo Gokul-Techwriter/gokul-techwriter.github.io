@@ -1,420 +1,446 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gokul S Anand — Technical Writer</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<style>
-  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gokul S Anand | Technical Writer</title>
 
-  :root {
-    --teal: #2d7d74;
-    --teal-dark: #1f5c55;
-    --teal-light: #e8f4f2;
-    --navy: #0d2b45;
-    --text-light: #555;
-    --white: #ffffff;
-    --border: #e0e0e0;
-  }
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
 
-  html, body {
-    height: 100%;
-    overflow: hidden;
-    font-family: 'Raleway', sans-serif;
-    background: var(--white);
-    color: var(--navy);
-  }
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  .page {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-  }
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: #f7f7f7;
+            color: #07113b;
+            overflow: hidden;
+        }
 
-  /* NAV */
-  nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.1rem 4rem;
-    border-bottom: 1px solid var(--border);
-    flex-shrink: 0;
-  }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
 
-  .nav-brand h1 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.6rem;
-    font-weight: 600;
-    color: var(--navy);
-  }
+        .container {
+            width: 95%;
+            max-width: 1450px;
+            margin: auto;
+        }
 
-  .nav-brand p {
-    font-size: 0.68rem;
-    font-weight: 700;
-    letter-spacing: 0.18em;
-    color: var(--teal);
-    text-transform: uppercase;
-    margin-top: 0.1rem;
-  }
+        header {
+            padding: 20px 0 10px;
+            border-bottom: 1px solid #cfcfcf;
+        }
 
-  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-  .nav-links a {
-    text-decoration: none;
-    font-size: 0.95rem;
-    font-weight: 500;
-    color: var(--text-light);
-    position: relative;
-    padding-bottom: 4px;
-    transition: color 0.2s;
-  }
+        .logo h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            line-height: 1;
+            color: #07113b;
+        }
 
-  .nav-links a.active,
-  .nav-links a:hover { color: var(--teal); }
+        .logo p {
+            color: #0b7b82;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-top: 10px;
+            font-size: 1.1rem;
+        }
 
-  .nav-links a.active::after {
-    content: '';
-    position: absolute;
-    bottom: 0; left: 0;
-    width: 100%; height: 2px;
-    background: var(--teal);
-    border-radius: 2px;
-  }
+        nav ul {
+            display: flex;
+            gap: 70px;
+            list-style: none;
+        }
 
-  /* HERO */
-  .hero {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 4rem;
-    border-bottom: 1px solid var(--border);
-    min-height: 0;
-    overflow: visible;
-  }
+        nav a {
+            font-weight: 700;
+            font-size: 1.5rem;
+            position: relative;
+        }
 
-  .hero-left { max-width: 500px; }
+        nav a.active::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -18px;
+            width: 100%;
+            height: 5px;
+            background: #0b7b82;
+        }
 
-  .hero-left h2 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(1.8rem, 2.5vw, 2.8rem);
-    font-weight: 600;
-    color: var(--navy);
-    line-height: 1.25;
-    margin-bottom: 1.8rem;
-  }
+        .hero {
+            height: calc(100vh - 110px);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 0;
+        }
 
-  .hero-left h2 span { color: var(--teal); }
+        .hero-left {
+            width: 52%;
+        }
 
-  .hero-buttons { display: flex; gap: 1rem; }
+        .hero-left h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 5rem;
+            line-height: 1.15;
+            margin-bottom: 50px;
+        }
 
-  .btn {
-    background: var(--teal);
-    color: var(--white);
-    padding: 0.75rem 1.6rem;
-    border: none;
-    font-family: 'Raleway', sans-serif;
-    font-size: 0.88rem;
-    font-weight: 600;
-    cursor: pointer;
-    text-decoration: none;
-    display: inline-block;
-    letter-spacing: 0.02em;
-    transition: background 0.2s;
-  }
+        .hero-left h2 span {
+            color: #0b7b82;
+        }
 
-  .btn:hover { background: var(--teal-dark); }
+        .hero-buttons {
+            display: flex;
+            gap: 35px;
+        }
 
-  .hero-right {
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+        .hero-buttons a,
+        .hero-buttons button {
+            background: #0b7b82;
+            border: none;
+            color: white;
+            padding: 22px 55px;
+            border-radius: 10px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
 
-  .photo-circle {
-    width: 320px;
-    height: 320px;
-    border-radius: 50%;
-    background: #2d8c82;
-    overflow: hidden;
-    position: relative;
-    flex-shrink: 0;
-  }
+        .hero-buttons a:hover,
+        .hero-buttons button:hover {
+            transform: translateY(-3px);
+            background: #09666c;
+        }
 
-  .photo-circle img {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
-    height: 130%;
-    object-fit: cover;
-    object-position: top center;
-    display: block;
-  }
+        .hero-right {
+            width: 42%;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-  /* WHAT I DO */
-  .what-i-do {
-    padding: 1.2rem 4rem;
-    border-bottom: 1px solid var(--border);
-    flex-shrink: 0;
-  }
+        .circle {
+            width: 700px;
+            position: absolute;
+            z-index: 1;
+        }
 
-  .what-i-do h3 { font-size: 0.9rem; font-weight: 700; color: var(--navy); margin-bottom: 0.3rem; }
+        .character {
+            width: 560px;
+            position: relative;
+            z-index: 2;
+        }
 
-  .bar { width: 26px; height: 3px; background: var(--teal); border-radius: 2px; margin-bottom: 1rem; }
+        .modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.5);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+            padding: 20px;
+        }
 
-  .services {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    border: 1px solid var(--border);
-  }
+        .modal.active {
+            display: flex;
+        }
 
-  .service {
-    padding: 1rem;
-    text-align: center;
-    border-right: 1px solid var(--border);
-  }
+        .modal-content {
+            width: 100%;
+            max-width: 1000px;
+            background: #f7f7f7;
+            border: 18px solid #0b7b82;
+            border-radius: 35px;
+            padding: 45px;
+            position: relative;
+        }
 
-  .service:last-child { border-right: none; }
+        .close-btn {
+            position: absolute;
+            right: 25px;
+            top: 25px;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            border: 3px solid #cfdede;
+            background: transparent;
+            font-size: 2.2rem;
+            color: #0b7b82;
+            cursor: pointer;
+        }
 
-  .s-icon {
-    width: 40px; height: 40px;
-    border-radius: 50%;
-    background: var(--teal-light);
-    display: flex; align-items: center; justify-content: center;
-    margin: 0 auto 0.6rem;
-  }
+        .modal-top {
+            text-align: center;
+        }
 
-  .s-icon svg { width: 19px; height: 19px; stroke: var(--teal); fill: none; stroke-width: 1.8; }
+        .modal-top img {
+            width: 140px;
+            margin-bottom: 20px;
+        }
 
-  .s-num { font-size: 0.75rem; font-weight: 700; color: var(--teal); margin-bottom: 0.2rem; }
-  .s-title { font-size: 0.8rem; font-weight: 700; color: var(--navy); margin-bottom: 0.1rem; }
-  .s-sub { font-size: 0.7rem; color: var(--text-light); }
+        .modal-top h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            margin-bottom: 10px;
+        }
 
-  /* TOOLS */
-  .tools { padding: 1rem 4rem; flex-shrink: 0; }
+        .line {
+            width: 90px;
+            height: 7px;
+            background: #0b7b82;
+            margin: 20px auto 35px;
+            border-radius: 30px;
+        }
 
-  .tools h3 { font-size: 0.9rem; font-weight: 700; color: var(--navy); margin-bottom: 0.7rem; }
+        .modal-top p {
+            font-size: 2rem;
+            line-height: 1.5;
+            margin-bottom: 45px;
+        }
 
-  .tools-row {
-    display: flex;
-    border: 1px solid var(--border);
-  }
+        .contact-card {
+            border: 2px solid #d8dede;
+            border-radius: 22px;
+            padding: 25px 35px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            background: white;
+        }
 
-  .tool {
-    display: flex; align-items: center; gap: 0.5rem;
-    padding: 0.65rem 0; flex: 1; justify-content: center;
-    font-size: 0.83rem; font-weight: 500; color: var(--navy);
-    border-right: 1px solid var(--border);
-  }
+        .contact-left {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
 
-  .tool:last-child { border-right: none; }
-  .tool svg { width: 19px; height: 19px; flex-shrink: 0; }
+        .contact-left img {
+            width: 90px;
+        }
 
-  /* FOOTER */
-  footer {
-    text-align: center;
-    padding: 0.6rem;
-    border-top: 1px solid var(--border);
-    font-size: 0.76rem;
-    color: var(--text-light);
-    flex-shrink: 0;
-  }
+        .contact-info h3 {
+            font-size: 2.3rem;
+            margin-bottom: 8px;
+        }
 
-  /* MODAL */
-  .modal-overlay {
-    display: none;
-    position: fixed; inset: 0;
-    background: rgba(0,0,0,0.45);
-    z-index: 100;
-    align-items: center; justify-content: center;
-  }
+        .contact-info p {
+            color: #0b7b82;
+            font-size: 1.5rem;
+        }
 
-  .modal-overlay.open { display: flex; }
+        .arrow {
+            font-size: 3rem;
+            color: #0b7b82;
+        }
 
-  .modal {
-    background: var(--white);
-    border-radius: 16px;
-    border: 2px solid var(--teal);
-    padding: 2.2rem 1.8rem;
-    width: 90%; max-width: 440px;
-    position: relative; text-align: center;
-    animation: pop 0.2s ease;
-  }
+        @media(max-width: 1100px) {
+            body {
+                overflow-y: auto;
+            }
 
-  @keyframes pop { from { transform: scale(0.93); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+            .hero {
+                height: auto;
+                flex-direction: column;
+                text-align: center;
+                padding: 40px 0;
+            }
 
-  .modal-close {
-    position: absolute; top: 0.9rem; right: 0.9rem;
-    background: none; border: 1.5px solid var(--border);
-    border-radius: 50%; width: 28px; height: 28px;
-    cursor: pointer; font-size: 0.85rem; color: var(--text-light);
-    display: flex; align-items: center; justify-content: center;
-  }
+            .hero-left,
+            .hero-right {
+                width: 100%;
+            }
 
-  .modal-close:hover { border-color: var(--teal); color: var(--teal); }
+            .hero-left h2 {
+                font-size: 3rem;
+            }
 
-  .modal-icon {
-    width: 50px; height: 50px; border-radius: 50%;
-    background: var(--teal-light);
-    display: flex; align-items: center; justify-content: center;
-    margin: 0 auto 0.9rem;
-  }
+            .hero-buttons {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
 
-  .modal-icon svg { width: 22px; height: 22px; stroke: var(--teal); fill: none; stroke-width: 1.8; }
+            .circle {
+                width: 100%;
+                max-width: 500px;
+            }
 
-  .modal h2 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.8rem; font-weight: 600;
-    color: var(--navy); margin-bottom: 0.35rem;
-  }
+            .character {
+                width: 90%;
+                max-width: 420px;
+            }
 
-  .modal-bar { width: 34px; height: 3px; background: var(--teal); border-radius: 2px; margin: 0 auto 0.7rem; }
-  .modal p { font-size: 0.85rem; color: var(--text-light); margin-bottom: 1.3rem; line-height: 1.5; }
+            nav ul {
+                gap: 25px;
+            }
 
-  .contact-links { display: flex; flex-direction: column; gap: 0.65rem; }
+            nav a {
+                font-size: 1rem;
+            }
 
-  .contact-link {
-    display: flex; align-items: center; gap: 0.8rem;
-    padding: 0.75rem 0.9rem;
-    border: 1px solid var(--border); border-radius: 10px;
-    text-decoration: none; color: var(--navy);
-    transition: border-color 0.2s, background 0.2s;
-  }
+            .logo h1 {
+                font-size: 2rem;
+            }
 
-  .contact-link:hover { border-color: var(--teal); background: var(--teal-light); }
+            .modal-content {
+                padding: 30px 20px;
+            }
 
-  .c-icon {
-    width: 36px; height: 36px; border-radius: 50%;
-    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
-  }
+            .modal-top h2 {
+                font-size: 2.5rem;
+            }
 
-  .c-icon svg { width: 17px; height: 17px; }
-  .c-icon.email { background: var(--teal); }
-  .c-icon.linkedin { background: #0077b5; }
-  .c-icon.github { background: #1a1a2e; }
-  .c-text { flex: 1; text-align: left; }
-  .c-text strong { display: block; font-size: 0.85rem; font-weight: 700; color: var(--navy); }
-  .c-text span { font-size: 0.74rem; color: var(--teal); }
-  .c-arrow { color: var(--text-light); font-size: 1.1rem; }
-</style>
+            .modal-top p {
+                font-size: 1.2rem;
+            }
+
+            .contact-card {
+                padding: 18px;
+            }
+
+            .contact-info h3 {
+                font-size: 1.4rem;
+            }
+
+            .contact-info p {
+                font-size: 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
 
-<div class="page">
-  <nav>
-    <div class="nav-brand">
-      <h1>Gokul S Anand</h1>
-      <p>Technical Writer</p>
-    </div>
-    <ul class="nav-links">
-      <li><a href="index.html" class="active">Home</a></li>
-      <li><a href="portfolio.html">Work</a></li>
-      <li><a href="about.html">About</a></li>
-    </ul>
-  </nav>
+<header>
+    <div class="container navbar">
 
-  <div class="hero">
+        <div class="logo">
+            <h1>Gokul S Anand</h1>
+            <p>TECHNICAL WRITER</p>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a class="active" href="index.html">Home</a></li>
+                <li><a href="portfolio.html">Work</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+
+    </div>
+</header>
+
+<section class="hero container">
+
     <div class="hero-left">
-      <h2>I create clear, concise, and user-focused documentation for <span>users and developers.</span></h2>
-      <div class="hero-buttons">
-        <a href="portfolio.html" class="btn">View My Work</a>
-        <button class="btn" onclick="document.getElementById('contactModal').classList.add('open')">Contact Me</button>
-      </div>
+        <h2>
+            I create clear, concise, and <br>
+            user-focused documentation <br>
+            for <span>users and developers.</span>
+        </h2>
+
+        <div class="hero-buttons">
+            <a href="portfolio.html">View My Work</a>
+            <button id="contactBtn">Contact Me</button>
+        </div>
     </div>
+
     <div class="hero-right">
-      <div class="photo-circle">
-        <img src="images/me.png" alt="Gokul S Anand" onerror="this.src='images/home-page.jpg'">
-      </div>
+        <img src="images/teal-circle.png" class="circle" alt="circle">
+        <img src="images/my-character.png" class="character" alt="character">
     </div>
-  </div>
 
-  <section class="what-i-do">
-    <h3>What I Do</h3>
-    <div class="bar"></div>
-    <div class="services">
-      <div class="service">
-        <div class="s-icon"><svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
-        <div class="s-num">01</div><div class="s-title">User Guides</div><div class="s-sub">Product guides.</div>
-      </div>
-      <div class="service">
-        <div class="s-icon"><svg viewBox="0 0 24 24"><path d="M12 2v12"/><path d="m8 14 4 4 4-4"/><rect x="2" y="18" width="20" height="4" rx="1"/></svg></div>
-        <div class="s-num">02</div><div class="s-title">Installation</div><div class="s-sub">Setup docs.</div>
-      </div>
-      <div class="service">
-        <div class="s-icon"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
-        <div class="s-num">03</div><div class="s-title">Troubleshooting</div><div class="s-sub">Issue resolution.</div>
-      </div>
-      <div class="service">
-        <div class="s-icon"><svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
-        <div class="s-num">04</div><div class="s-title">API Documentation</div><div class="s-sub">API references.</div>
-      </div>
-      <div class="service">
-        <div class="s-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
-        <div class="s-num">05</div><div class="s-title">FAQ Documentation</div><div class="s-sub">Help center content.</div>
-      </div>
+</section>
+
+<div class="modal" id="contactModal">
+
+    <div class="modal-content">
+
+        <button class="close-btn" id="closeBtn">✕</button>
+
+        <div class="modal-top">
+            <img src="images/contact-popup.png" alt="contact">
+            <h2>Get In Touch</h2>
+            <div class="line"></div>
+            <p>Feel free to reach out through any of the platforms below.</p>
+        </div>
+
+        <a href="mailto:connectgokultwr@gmail.com" target="_blank">
+            <div class="contact-card">
+                <div class="contact-left">
+                    <img src="https://cdn-icons-png.flaticon.com/512/561/561127.png">
+                    <div class="contact-info">
+                        <h3>Email Me</h3>
+                        <p>connectgokultwr@gmail.com</p>
+                    </div>
+                </div>
+                <div class="arrow">›</div>
+            </div>
+        </a>
+
+        <a href="https://www.linkedin.com/in/gokul-s-anand" target="_blank">
+            <div class="contact-card">
+                <div class="contact-left">
+                    <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png">
+                    <div class="contact-info">
+                        <h3>LinkedIn</h3>
+                        <p>linkedin.com/in/gokul-s-anand</p>
+                    </div>
+                </div>
+                <div class="arrow">›</div>
+            </div>
+        </a>
+
+        <a href="https://github.com/Gokul-Techwriter" target="_blank">
+            <div class="contact-card">
+                <div class="contact-left">
+                    <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png">
+                    <div class="contact-info">
+                        <h3>GitHub</h3>
+                        <p>github.com/Gokul-Techwriter</p>
+                    </div>
+                </div>
+                <div class="arrow">›</div>
+            </div>
+        </a>
+
     </div>
-  </section>
 
-  <section class="tools">
-    <h3>Tools &amp; Technologies</h3>
-    <div class="tools-row">
-      <div class="tool">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#2d7d74" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M6 15V9l3 3 3-3v6"/><path d="M17 12h-2m2 0-2-3m2 3-2 3"/></svg>Markdown
-      </div>
-      <div class="tool">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#f05033" stroke-width="1.8"><circle cx="6" cy="6" r="2"/><circle cx="18" cy="6" r="2"/><circle cx="12" cy="18" r="2"/><path d="M6 8v4a2 2 0 0 0 2 2h4"/><path d="M18 8v4a2 2 0 0 1-2 2h-4"/></svg>Git
-      </div>
-      <div class="tool">
-        <svg viewBox="0 0 24 24" width="19" height="19" fill="#1a1a2e"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>GitHub
-      </div>
-      <div class="tool">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#2d7d74" stroke-width="1.8"><path d="M8 3H7a2 2 0 0 0-2 2v5a2 2 0 0 1-2 2 2 2 0 0 1 2 2v5c0 1.1.9 2 2 2h1"/><path d="M16 21h1a2 2 0 0 0 2-2v-5a2 2 0 0 1 2-2 2 2 0 0 1-2-2V5a2 2 0 0 0-2-2h-1"/></svg>JSON
-      </div>
-      <div class="tool">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#2d7d74" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 12h8"/><path d="m12 8 4 4-4 4"/></svg>REST API
-      </div>
-      <div class="tool">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#ef5b25" stroke-width="1.8"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4 20-7z"/></svg>Postman
-      </div>
-    </div>
-  </section>
-
-  <footer>&copy; 2026 Gokul S Anand. All rights reserved.</footer>
 </div>
 
-<!-- Contact Modal -->
-<div class="modal-overlay" id="contactModal" onclick="if(event.target===this)this.classList.remove('open')">
-  <div class="modal">
-    <button class="modal-close" onclick="document.getElementById('contactModal').classList.remove('open')">&#x2715;</button>
-    <div class="modal-icon">
-      <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-    </div>
-    <h2>Get In Touch</h2>
-    <div class="modal-bar"></div>
-    <p>Feel free to reach out through any of the platforms below.</p>
-    <div class="contact-links">
-      <a href="mailto:connectgokultwr@gmail.com" class="contact-link">
-        <div class="c-icon email"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></div>
-        <div class="c-text"><strong>Email Me</strong><span>connectgokultwr@gmail.com</span></div>
-        <span class="c-arrow">›</span>
-      </a>
-      <a href="https://linkedin.com/in/gokul-s-anand" target="_blank" class="contact-link">
-        <div class="c-icon linkedin"><svg viewBox="0 0 24 24" fill="white"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7H10v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></div>
-        <div class="c-text"><strong>LinkedIn</strong><span>linkedin.com/in/gokul-s-anand</span></div>
-        <span class="c-arrow">›</span>
-      </a>
-      <a href="https://github.com/Gokul-Techwriter" target="_blank" class="contact-link">
-        <div class="c-icon github"><svg viewBox="0 0 24 24" fill="white"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg></div>
-        <div class="c-text"><strong>GitHub</strong><span>github.com/Gokul-Techwriter</span></div>
-        <span class="c-arrow">›</span>
-      </a>
-    </div>
-  </div>
-</div>
+<script>
+
+const contactBtn = document.getElementById('contactBtn');
+const modal = document.getElementById('contactModal');
+const closeBtn = document.getElementById('closeBtn');
+
+contactBtn.addEventListener('click', () => {
+    modal.classList.add('active');
+});
+
+closeBtn.addEventListener('click', () => {
+    modal.classList.remove('active');
+});
+
+</script>
 
 </body>
 </html>
