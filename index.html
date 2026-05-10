@@ -75,11 +75,13 @@
     justify-content: space-between;
     padding: 0 3.5rem;
     min-height: 0;
-    position: relative;
-    overflow: visible;
+    overflow: hidden;
   }
 
-  .hero-left { flex: 1; max-width: 530px; }
+  .hero-left {
+    flex: 1;
+    max-width: 530px;
+  }
 
   .hero-left h2 {
     font-family: 'Cormorant Garamond', serif;
@@ -106,24 +108,20 @@
   /* PHOTO */
   .hero-right {
     flex-shrink: 0;
-    position: relative;
-    width: 420px;
     align-self: stretch;
+    width: 360px;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
-    padding-top: 10px;
-    overflow: visible;
+    overflow: hidden;
   }
 
   .hero-photo {
-    width: 420px;
-    height: 420px;
+    max-height: 100%;
+    width: 360px;
     mix-blend-mode: multiply;
     display: block;
     object-fit: contain;
-    image-rendering: -webkit-optimize-contrast;
-    image-rendering: crisp-edges;
     flex-shrink: 0;
   }
 
