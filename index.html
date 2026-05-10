@@ -76,7 +76,7 @@
     padding: 0 3.5rem;
     min-height: 0;
     position: relative;
-    overflow: hidden;
+    overflow: visible;
   }
 
   .hero-left { flex: 1; max-width: 530px; }
@@ -106,17 +106,25 @@
   /* PHOTO */
   .hero-right {
     flex-shrink: 0;
+    position: relative;
+    width: 420px;
+    align-self: stretch;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
+    padding-top: 10px;
+    overflow: visible;
   }
 
   .hero-photo {
-    width: 340px;
-    height: 340px;
+    width: 420px;
+    height: 420px;
     mix-blend-mode: multiply;
     display: block;
     object-fit: contain;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    flex-shrink: 0;
   }
 
   /* DIVIDER */
